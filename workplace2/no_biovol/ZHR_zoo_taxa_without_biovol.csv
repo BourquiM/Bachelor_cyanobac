@@ -1,0 +1,49 @@
+"","id_CH","guild","order","genus","species","stage","abundance","occurrences"
+"1",7064,"herbivore cladocerans","Diplostraca","","","eggs",37722593,528
+"2",6593,"calanoid copepods","Calanoida","Diaptomus","sp","C1-C3",18896234,449
+"3",6594,"calanoid copepods","Calanoida","Diaptomus","sp","C4-C5",11760635,449
+"4",6592,"calanoid copepods","Calanoida","Diaptomus","sp","eggs",2831357,440
+"5",7042,"cyclopoid copepods","Cyclopoida","Cyclops","sp","eggs",2980592,434
+"6",7032,"cyclopoid copepods","Cyclopoida","Cyclops","bohater","C4-C5",632423,350
+"7",7040,"cyclopoid copepods","Cyclopoida","Cyclops","bohater","male",62288,270
+"8",7031,"cyclopoid copepods","Cyclopoida","Cyclops","bohater","C1-C3",514748,264
+"9",7057,"cyclopoid copepods","Cyclopoida","Mesocyclops","leuckarti","male",2483703,168
+"10",6586,"herbivore cladocerans","Diplostraca","Daphnia","sp","male",153999,140
+"11",8004,"invertebrate predators","Diptera","Chaoborus","crystallinus","larvae",8352,108
+"12",7063,"cyclopoid copepods","Cyclopoida","Mesocyclops","sp","female",1451463,107
+"13",9012,NA,"","","","",54411,104
+"14",7061,"cyclopoid copepods","Cyclopoida","Mesocyclops","sp","male",1473040,104
+"15",7060,"cyclopoid copepods","Cyclopoida","Mesocyclops","sp","juvenile",5675515,79
+"16",7062,"cyclopoid copepods","Cyclopoida","Mesocyclops","sp","ovaria",96705,48
+"17",6559,"herbivore cladocerans","Diplostraca","Alona","sp","juvenile",7730,47
+"18",6916,"calanoid copepods","Calanoida","Eudiaptomus","gracilis","adult",2817250,46
+"19",8000,NA,"Acari","","","",6383,34
+"20",7067,"cyclopoid copepods","Cyclopoida","Megacyclops","sp","C1-C3",10979,34
+"21",9014,NA,"","","","",4374,31
+"22",7104,"cyclopoid copepods","Harpacticoida","Canthocamptus","staphylinus","juvenile",2796,28
+"23",7050,"cyclopoid copepods","Cyclopoida","Megacyclops","sp","C4-C5",7492,24
+"24",7052,"cyclopoid copepods","Cyclopoida","Megacyclops","sp","female",710,20
+"25",7051,"cyclopoid copepods","Cyclopoida","Megacyclops","sp","male",421,15
+"26",7059,"cyclopoid copepods","Cyclopoida","Mesocyclops","sp","adult",404305,14
+"27",8002,NA,"Diptera","Chironomus","sp","larvae",315,11
+"28",8001,NA,"","","","",682,9
+"29",9018,NA,"","","","",1219,9
+"30",9019,NA,"","","","",881,9
+"31",6564,"herbivore cladocerans","Diplostraca","Ceriodaphnia","reticulata","juvenile",3181,9
+"32",9013,NA,"Oligochaeta","","","",198,8
+"33",6812,"herbivore cladocerans","Diplostraca","Polyphemus","pediculus","juvenile",556,8
+"34",7046,"cyclopoid copepods","Cyclopoida","Diacyclops","sp","female",149478,8
+"35",7066,"cyclopoid copepods","Cyclopoida","Megacyclops","sp","ovaria",244,8
+"36",9008,NA,"","","","larvae",349,7
+"37",7045,"cyclopoid copepods","Cyclopoida","Diacyclops","sp","male",57445,7
+"38",7043,"cyclopoid copepods","Cyclopoida","Cyclops","strenuus","female",31581,5
+"39",7053,"cyclopoid copepods","Cyclopoida","Megacyclops","viridis","C4-C5",819,5
+"40",7054,"cyclopoid copepods","Cyclopoida","Megacyclops","viridis","male",131,5
+"41",7055,"cyclopoid copepods","Cyclopoida","Megacyclops","viridis","ovaria",155,4
+"42",7056,"cyclopoid copepods","Cyclopoida","Megacyclops","viridis","female",135,4
+"43",7047,"cyclopoid copepods","Cyclopoida","Megacyclops","gigas","C4-C5",73,3
+"44",6531,"herbivore cladocerans","Diplostraca","Eurycercus","lamellatus","",306,3
+"45",9002,NA,"","","","",44,2
+"46",6539,"herbivore cladocerans","Diplostraca","Sida","crystallina","",157,2
+"47",6507,"herbivore cladocerans","Diplostraca","Alonella","sp","",110,1
+"48",6566,"herbivore cladocerans","Diplostraca","Ceriodaphnia","sp","juvenile",295,1

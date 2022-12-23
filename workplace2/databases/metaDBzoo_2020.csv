@@ -1,0 +1,395 @@
+id_CH;ID_ZH;ID_RO;empire;kingdom;phylum;class;order;family;genus;species;stage;affiliation;synonyms;comments;size_category;motility;physiology;colony_growth;foraging_behavior;strategy;foraging_systematics;volume_um.3;surface_um.2;VWS;GRE;HAL;SEM;BAL;BoOber;Unter;WAL;qualifier_as_food;guild;guild.code
+5201;;;eukaryota;Protozoa;Amoebozoa;Lobosa;Arcellinida;Arcellidae;Arcella;sp;;;;after Cavallier-Smith et al. 2015;e;d;f;b;j;K;11;50000;3500;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5202;;;eukaryota;Protozoa;Amoebozoa;Discosea;Thecamoebida;Thecamoebidae;;;;;;after Cavallier-Smith et al. 2015;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5250;;;eukaryota;Protozoa;Amoebozoa;;;;Astramoeba;sp;;;;taxonomy vague!;e;d;f;b;j;K;11;5000;2000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5251;;;eukaryota;Protozoa;Amoebozoa;;;;Astramoeba;radiosa;;;;taxonomy vague!;e;d;f;b;j;K;11;5000;2000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5253;;;eukaryota;Protozoa;Amoebozoa;Discosea;Dactylopodida;Paramoebidae;Mayorella;sp;;;;;e;d;f;b;j;K;11;45000;10000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5259;;;eukaryota;Protozoa;Amoebozoa;Tubulinea;Amoebida;Amoebidae;Chaos;sp;;;;taxonomy vague!;e;d;f;b;j;K;11;45000;10000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5299;;;eukaryota;Protozoa;Amoebozoa;;;;Amoebae;;;;;taxonomy vague!;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5400;;;eukaryota;Protozoa;Heliozoa;;;;;;;;;taxonomy vague!;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5401;;;eukaryota;Protozoa;Heliozoa;;;Acanthocistidae;Acanthocystis;sp;;;;taxonomy vague!;f;c;f;b;j;K;11;8500;8000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5402;;;eukaryota;Protozoa;Heliozoa;;;Acanthocistidae;Acanthocystis;aculeata;;;;taxonomy vague!;e;c;f;b;j;K;11;12500;8000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5403;;;eukaryota;Protozoa;Heliozoa;;;Actinophyridae;Actinophrys;sp;;;;taxonomy vague!;f;c;f;b;j;K;11;24500;14000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5404;;;eukaryota;Protozoa;Heliozoa;;;Actinophyridae;Actinophrys;sol;;;;taxonomy vague!;f;c;f;b;j;K;11;24500;14000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5405;;;eukaryota;Protozoa;Heliozoa;;;Actinosphaeridae;Actinosphaerium;sp;;;;taxonomy vague!;f;c;f;;j;K;11;75000;20000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5406;;;eukaryota;Protozoa;Labyrinthista;Labyrinthulea;Piroplasmida;Heterophyridae;Heterophrys;sp;;;;taxonomy vague!;f;c;f;;j;K;11;38000;16000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5407;;;eukaryota;Protozoa;Labyrinthista;Labyrinthulea;Piroplasmida;;Heterophrys;myriapoda;;;;taxonomy vague!;f;c;f;;j;K;11;38000;16000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5408;;ZC0024;eukaryota;Protozoa;Heliozoa;Centrohelea;Centrohelida;Raphidiophryidae;Raphidiophrys;sp;;;;;e;c;f;f;j;K;11;15000;10000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5409;;;eukaryota;Protozoa;Heliozoa;Centrohelea;Centrohelida;Raphidiophryidae;Raphidiophrys;viridis;;;;;e;c;f;f;j;K;11;15000;10000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5499;;;eukaryota;Protozoa;;;;;Heliozoa;;;;;taxonomy vague!;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5501;;;eukaryota;Chromalveolata;Ciliophora;;Holotricha;;Kinetophragminophora;;;;;taxonomy vague!;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;NA
+5502;;;eukaryota;Chromalveolata;Ciliophora;Ciliatea;Holotrichia;Holophryidae;Holophrya;sp;;;;taxonomy vague!;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;NA
+5503;;;eukaryota;Chromalveolata;Ciliophora;Ciliatea;Rhabdophorina;Tracheliidae;Dileptus;sp;;;;taxonomy vague!;f;a;e;;l;K;13;81000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci2
+5504;;ZC0005;eukaryota;Chromalveolata;Ciliophora;Litostomatea;Pleurostomatida;Amphileptidae;Amphileptus;sp;;;;taxonomy vague!;f;a;e;;l;K;13;82000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci2
+5505;;;eukaryota;Chromalveolata;Ciliophora;Litostomatea;Pleurostomatida;Litonotidae;Litonotus;sp;;;;taxonomy vague!;e;a;e;;l;K;13;13500;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5506;;;eukaryota;Chromalveolata;Ciliophora;Spirotricha;Entodiniomorphida;Colpodidae;Colpoda;sp;;;;taxonomy vague!;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;NA
+5507;;;eukaryota;Chromalveolata;Ciliophora;Litostomatea;Vestibuliferida;Plagiopylidae;Plagiopyla;sp;;;;taxonomy vague!;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;NA
+5508;;;eukaryota;Chromalveolata;Ciliophora;;Holotricha;Nassulidae;Nassula;sp;;;;taxonomy vague!;f;a;e;;i;K;11;1500000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci3
+5509;;;eukaryota;Chromalveolata;Ciliophora;;Holotricha;Nassulidae;Nassula;aurea;;;;taxonomy vague!;g;a;e;;i;R;11;1500000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci3
+5510;;;eukaryota;Chromalveolata;Ciliophora;Gymnostomatea;Spathidiida;Actinobolinidae;Actinobolina;sp;;;;taxonomy vague!;f;a;e;;l;K;13;250000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci3
+5511;;;eukaryota;Chromalveolata;Ciliophora;Gymnostomatea;Spathidiida;Actinobolinidae;Actinobolina;vorax;;;;taxonomy vague!;f;a;e;;l;K;13;250000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci3
+5512;;;eukaryota;Chromalveolata;Ciliophora;Prostomatea;Prostomatida;Colepidae;Coleps;sp;;;;taxonomy vague!;f;a;e;;i;R;10;15000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5513;;;eukaryota;Chromalveolata;Ciliophora;Prostomatea;Prostomatida;Colepidae;Coleps;hirtus;;;;taxonomy vague!;f;a;e;;i;R;10;15000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5514;;;eukaryota;Chromalveolata;Ciliophora;Litostomatea;Cyclotrichiida;Mesodiniidae;Askenasia;sp;;;;taxonomy vague!;f;a;e;;i;R;10;35000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5515;;;eukaryota;Chromalveolata;Ciliophora;Litostomatea;Cyclotrichiida;Mesodiniidae;Askenasia;sp;;;;taxonomy vague!;f;a;e;;i;R;10;35000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5516;;;eukaryota;Chromalveolata;Ciliophora;Ciliatea;Rhabdophorina;Didiniidae;Didinium;sp;;;;taxonomy vague!;f;a;e;;l;K;13;300000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci3
+5517;;;eukaryota;Chromalveolata;Ciliophora;Ciliatea;Rhabdophorina;Didiniidae;Didinium;nasutum;;;;taxonomy vague!;f;a;e;;l;K;13;600000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci3
+5518;;;eukaryota;Chromalveolata;Ciliophora;Prostomatea;Prostomatida;Urotrichidae;Urotricha;sp;;;;taxonomy vague!;e;a;e;;i;R;10;12000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5519;;;eukaryota;Chromalveolata;Ciliophora;Prostomatea;Prostomatida;Urotrichidae;Urotricha;farcta;;;;taxonomy vague!;e;a;e;;i;R;10;12000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5520;;;eukaryota;Chromalveolata;Ciliophora;Litostomatea;Haptorida;Tracheliidae;Paradileptus;sp;;;;taxonomy vague!;f;a;e;;l;K;13;1500000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci3
+5521;;;eukaryota;Chromalveolata;Ciliophora;Intramacronucleata;;Phyllopharyngea;Suctoria;sp;;;;taxonomy vague!;e;c;e;;i;K;11;15000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5522;;;eukaryota;Chromalveolata;Ciliophora;Suctoria;Suctorida;Dendrosomatidae;Staurophrya;sp;;;;taxonomy vague!;f;c;e;;j;K;13;180000;22000;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci3
+5523;;;eukaryota;Chromalveolata;Ciliophora;Phyllopharyngea;Exogenida;Podophryidae;Podophrya;sp;;;;taxonomy vague!;e;c;e;];j;K;13;5400;1700;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5524;;;eukaryota;Chromalveolata;Ciliophora;Litostomatea;Haptorida;Tracheliidae;Trachelius;sp;;;;taxonomy vague!;f;a;e;;i;K;11;1500000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci3
+5525;;;eukaryota;Chromalveolata;Ciliophora;Kinetofragminophora;Suctorida;Acinetidae;Acineta;sp;;;;taxonomy vague!;f;c;e;];j;K;13;150000;20000;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci3
+5526;;;eukaryota;Chromalveolata;Ciliophora;Litostomatea;Haptorida;Trachelophyllidae;Lagynophrya;sp;;;;taxonomy vague!;e;c;e;;i;K;11;15000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5527;;;eukaryota;Chromalveolata;Ciliophora;Cyrtophoria;Cyrtophorida;Chilodonellidae;Chilodonella;sp;;;;taxonomy vague!;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;NA
+5598;;;eukaryota;Chromalveolata;Ciliophora;;;;;;large;Kinetophragminophora;;taxonomy vague!;f;a;e;;i;R;11;60000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci2
+5599;;;eukaryota;Chromalveolata;Ciliophora;;;;;;small;Kinetophragminophora;;taxonomy vague!;e;a;e;;i;R;11;2000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5701;;;eukaryota;Chromalveolata;Ciliophora;;;;Oligohymenophora;sp;;;;taxonomy vague!;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;NA
+5702;;;eukaryota;Chromalveolata;Ciliophora;Oligohymenophorea;Hymenostomatida;Glaucomidae;Glaucoma;sp;;;;taxonomy vague!;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;NA
+5703;;ZC0023;eukaryota;Chromalveolata;Ciliophora;Ciliatea;Hymenostomatida;Parameciidae;Paramecium;sp;;;;taxonomy vague!;;;;;;;NA;800000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci3
+5704;;;eukaryota;Chromalveolata;Ciliophora;Rhabdophorina;Pleuronematina;Cyclidiidae;Cyclidium;sp;;;;taxonomy vague!;e;a;e;;i;R;10;2000;1500;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5705;;;eukaryota;Chromalveolata;Ciliophora;Hymenostomatida;Pleuronematina;Cyclidiidae;Cyclidium;citrullus;;;;taxonomy vague!;e;a;e;;i;R;10;2000;1500;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5706;;ZC0012;eukaryota;Chromalveolata;Ciliophora;Oligohymenophorea;Sessilida;Epistylididae;Epistylis;sp;;;;taxonomy vague!;f;a;e;;i;R;10;48000;15500;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci2
+5707;;;eukaryota;Chromalveolata;Ciliophora;Oligohymenophorea;Sessilida;Epistylididae;Epistylis;rotans;;;;taxonomy vague!;f;a;e;;i;R;10;48000;15500;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci2
+5708;;;eukaryota;Chromalveolata;Ciliophora;Oligohymenophorea;;Vorticellidae;Vorticella;sp;;;;taxonomy vague!;e;a;e;];i;R;11;5000;3000;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5709;;;eukaryota;Chromalveolata;Ciliophora;Oligohymenophorea;Peritrichida;Zoothamniidae;Zoothamnium;sp;;;;taxonomy vague!;e;a;e;];i;R;11;6000;3000;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5710;;;eukaryota;Chromalveolata;Ciliophora;Oligohymenophorea;Peritrichida;Ophrydiidae;Ophyrydium;sp;;;;taxonomy vague!;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;NA
+5711;;;eukaryota;Chromalveolata;Ciliophora;Oligohymenophorea;Peritrichida;Trichodinidae;Trichodina;sp;;;;taxonomy vague!;f;a;e;];i;K;12;65000;10000;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci2
+5712;;;eukaryota;Chromalveolata;Ciliophora;Oligohymenophorea;Sessilida;Vaginicolidae;Cothurnia;sp;;;;taxonomy vague!;f;c;e;];i;K;11;15000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5713;;;eukaryota;Chromalveolata;Ciliophora;Ciliatea;Peritrichida;Lagenophryidae;Lagenophrys;sp;;;;taxonomy vague!;f;c;e;];i;K;11;30000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5901;;;eukaryota;Chromalveolata;;;;;Spirotricha;sp;;;;taxonomy vague!;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+5902;;;eukaryota;Chromalveolata;Ciliophora;Oligotrichea;Halteriida;Halteriidae;Halteria;sp;;;;taxonomy vague!;e;a;e;;i;K;11;2500;2000;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci1
+5903;;;eukaryota;Chromalveolata;Ciliophora;Oligotrichea;Oligotrichida;Strombidiidae;Strombidium;sp;;;;;f;a;e;;l;R;11;110000;15000;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci2
+5904;;;eukaryota;Chromalveolata;Ciliophora;Oligotrichea;Oligotrichida;Strombidiidae;Strombidium;viride;;;;;f;a;e;;l;R;11;110000;15000;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci2
+5905;;ZC0027;eukaryota;Chromalveolata;Ciliophora;Oligotrichea;Choreotrichida;Strobilidae;Strobilidium;sp;;;;;f;a;e;;i;R;11;90000;13000;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci2
+5906;;;eukaryota;Chromalveolata;Ciliophora;Oligotrichea;Choreotrichida;Strobilidae;Strobilidium;gyrans;;;;;f;a;e;;i;R;11;90000;13000;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci2
+5907;;;eukaryota;Chromalveolata;Ciliophora;Heterotrichea;Heterotrichida;Stentoridae;Stentor;sp;;;;taxonomy vague!;g;d;e;;i;R;11;2000000;150000;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci3
+5908;;;eukaryota;Chromalveolata;Ciliophora;Heterotrichea;Heterotrichida;Stentoridae;Stentor;roeseli;;;;taxonomy vague!;g;d;e;;i;R;11;2000000;150000;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci3
+5909;;ZC0009;eukaryota;Chromalveolata;Ciliophora;Oligotrichea;Choreotrichida;Codonellidae;Tintinnopsis;sp;;;;;f;a;e;;i;R;11;45000;10000;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci2
+5910;;;eukaryota;Chromalveolata;Ciliophora;Oligotrichea;Choreotrichida;Codonellidae;Tintinnopsis;lacustris;;;;;f;a;e;;i;R;11;45000;10000;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci2
+5911;;;eukaryota;Chromalveolata;Ciliophora;Oligotrichea;Choreotrichida;Tintinnidiidae;Tintinnidium;sp;;;;;f;a;e;;i;R;11;50000;12000;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci2
+5912;;;eukaryota;Chromalveolata;Ciliophora;Oligotrichea;Choreotrichida;Tintinnidiidae;Tintinnidium;fluviatile;;;;;f;a;e;;i;R;11;50000;12000;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci2
+5913;;;eukaryota;Chromalveolata;Ciliophora;Spirotrichea;Euplotida;Euplotidae;Euplotes;sp;;;;taxonomy vague!;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;NA
+5914;;;eukaryota;Chromalveolata;Ciliophora;Spirotrichea;Euplotida;Euplotidae;Euplotes;patella;;;;taxonomy vague!;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;NA
+5915;;;eukaryota;Chromalveolata;Ciliophora;Hypotrichea;Oxytrichida;Oxytrichidae;Tachysoma;sp;;;;taxonomy vague!;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;NA
+5916;;;eukaryota;Chromalveolata;Ciliophora;Heterotrichea;Armophorida;Metopidae;Metopus;sp;;;;taxonomy vague!;;;;;;;NA;340000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci3
+5917;;;eukaryota;Chromalveolata;Ciliophora;Heterotrichea;Heterotrichida;Condylostomatidae;Condylostoma;sp;;;;taxonomy vague!;g;a;e;;i;R;11;500000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci3
+5918;;;eukaryota;Chromalveolata;Ciliophora;Heterotrichea;Heterotrichida;Bursariidae;Bursaridium;sp;;;;taxonomy vague!;f;a;e;;i;R;11;90000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci2
+5919;;;eukaryota;Chromalveolata;Ciliophora;Spirotrichea;Sporadotrichida;Oxytrichidae;Urosoma;sp;;;;taxonomy vague!;f;a;e;;i;R;11;45000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;Ci2
+6001;;;eukaryota;Animalia;Rotifera;Monogononta;Ploimida;Gastropidae;Ascomorpha;sp;;;;;f;a;g;;i;K;21;80000;20000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6002;;;eukaryota;Animalia;Rotifera;Monogononta;Ploimida;Gastropidae;Ascomorpha;ovalis;;;;;f;a;g;;i;K;21;80000;20000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6003;JA080100;;eukaryota;Animalia;Rotifera;Eurotatoria;Ploima;Asplanchnidae;Asplanchna;sp;;;;;g;a;g;;m;K;22;1300000;200000;NA;NA;NA;NA;NA;NA;NA;NA;NA;carnivore rotifers;C1
+6004;;;eukaryota;Animalia;Rotifera;Eurotatoria;Ploima;Asplanchnidae;Asplanchna;priodonta;;;;;g;a;g;;m;K;22;1300000;200000;NA;NA;NA;NA;NA;NA;NA;NA;NA;carnivore rotifers;C1
+6005;;;eukaryota;Animalia;Rotifera;Monogononta;Ploimida;Asplanchnidae;Asplanchnopus;sp;;;;;g;a;g;;m;K;22;1200000;200000;NA;NA;NA;NA;NA;NA;NA;NA;NA;carnivore rotifers;C1
+6006;;;eukaryota;Animalia;Rotifera;Monogononta;Ploimida;Brachionidae;Brachionus;sp;;;;;f;a;g;;i;R;21;2000000;140000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6007;;;eukaryota;Animalia;Rotifera;Eurotatoria;Ploima;Notommatidae;Cephalodella;sp;;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;NA
+6008;;;eukaryota;Animalia;Rotifera;Eurotatoria;Ploima;Epiphanidae;Epiphanes;sp;;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;NA
+6009;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Euchlanidae;Euchlanis;sp;;;;;f;a;g;;i;R;21;210000;25000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6010;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Gastropodidae;Gastropus;sp;;;;;f;a;g;;i;R;21;100000;22000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6011;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Gastropodidae;Gastropus;stylifer;;;;;f;a;g;;i;R;21;100000;22000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6012;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Brachionidae;Kellikottia;sp;;;;;f;a;g;;i;R;21;180000;24000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6013;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Brachionidae;Kellikottia;longispina;;;;;f;a;g;;i;R;21;180000;24000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6014;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Brachionidae;Keratella;sp;;;;;f;a;g;;i;R;21;60000;8000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6015;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Brachionidae;Keratella;cochlearis;;;;;f;a;g;;i;R;21;60000;8000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6016;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Brachionidae;Keratella;quadrata;;;;;f;a;g;;i;R;21;80000;9000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6017;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Brachionidae;Keratella;hiemalis;;;;;f;a;g;;i;R;21;80000;9000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6018;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Brachionidae;Notholca;sp;;;;;f;a;g;;i;K;21;530000;28000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6019;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Brachionidae;Notholca;squamula;;;;;f;a;g;;i;K;21;530000;28000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6020;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Brachionidae;Notholca;acuminata;;;;;f;a;g;;i;K;21;600000;29000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6021;;;eukaryota;Animalia;Rotifera;Monogononta;Ploimida;Trichotriidae;Macrochaetus;sp;;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;NA
+6022;;;eukaryota;Animalia;Rotifera;Monogononta;Ploimida;Notommatidae;Monommata;sp;;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;NA
+6023;;;eukaryota;Animalia;Rotifera;Monogononta;Ploimida;Brachionidae;Mytilina;sp;;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;NA
+6024;;;eukaryota;Animalia;Rotifera;Monogononta;Ploimida;Lepadellidae;Lepadella;sp;;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;NA
+6025;;ZC0153;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Synchaetidae;Ploesoma;sp;;;;;f;a;g;;i;K;21;230000;18000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6026;;ZC0152;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Synchaetidae;Ploesoma;truncatum;;;;;f;a;g;;i;K;21;230000;18000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6027;;ZC0159;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Synchaetidae;Polyarthra;sp;;;;;f;a;g;;i;R;21;180000;18000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6028;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Synchaetidae;Polyarthra;dolichoptera;;;;;f;a;g;;i;R;21;180000;12000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6029;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Synchaetidae;Polyarthra;vulgaris;;;;;f;a;g;;i;R;21;230000;13000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6030;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Synchaetidae;Polyarthra;major;;;;;f;a;g;;i;R;21;280000;15000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6031;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Synchaetidae;Polyarthra;remata;;;;;f;a;g;;i;R;21;140000;10000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6032;;ZC0164;eukaryota;Animalia;Rotifera;Eurotatoria;Ploima;Epiphanidae;Rhinoglena;sp;;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;NA
+6033;;ZC0166;Eukaryota;Animalia;Rotifera;Monogononta;Ploima;Scaridiidae;Scaridium;sp;;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;NA
+6034;;;eukaryota;Animalia;Rotifera;Eurotatoria;Ploima;Lepadellidae;Squatinella;sp;;;;;f;a;g;;i;R;21;68000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6035;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Synchaetidae;Synchaeta;sp;;;;;f;a;g;;m;K;22;900000;20000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6036;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Synchaetidae;Synchaeta;kitina;;;;;f;a;g;;m;K;22;180000;12000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6037;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Synchaetidae;Synchaeta;stylata;;;;;f;a;g;;m;K;22;900000;20000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6038;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Synchaetidae;Synchaeta;pectinata;;;;;f;a;g;;m;K;22;1000000;21000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6039;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Synchaetidae;Synchaeta;grandis;;;;;f;a;g;;m;K;22;1400000;32000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6040;;;eukaryota;Animalia;Rotifera;Monogononta;Ploima;Synchaetidae;Synchaeta;oblonga;;;;;f;a;g;;m;K;22;600000;18000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6041;;;eukaryota;Animalia;Rotifera;Eurotatoria;Ploima;Trichocercidae;Trichocerca;sp;;;;;f;a;g;;i;R;21;120000;12000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6042;;;eukaryota;Animalia;Rotifera;Eurotatoria;Ploima;Trichocercidae;Trichocerca;similis;;;;;f;a;g;;i;R;21;120000;12000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6043;;;eukaryota;Animalia;Rotifera;Eurotatoria;Ploima;Trichocercidae;Trichocerca;rousseleti;;;;;f;a;g;;i;R;21;100000;10000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6044;;;eukaryota;Animalia;Rotifera;Eurotatoria;Ploima;Trichocercidae;Trichocerca;porcellus;;;;;f;a;g;;i;R;21;110000;11000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6045;;;eukaryota;Animalia;Rotifera;Eurotatoria;Ploima;Trichocercidae;Trichocerca;capucina;;;;;f;a;g;;i;R;21;170000;13000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6046;;;eukaryota;Animalia;Rotifera;Monogononta;Ploimida;Trichotriidae;Trichotria;sp;;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;NA
+6047;;;eukaryota;Animalia;Rotifera;Eurotatoria;Ploima;Brachionidae;Platyas;sp;;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;NA
+6048;;;eukaryota;Animalia;Rotifera;Eurotatoria;Ploima;Lecanidae;Lecane;sp;;;;;f;a;g;;i;R;21;60000;10000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6049;JA080100H;;eukaryota;Animalia;Rotifera;Eurotatoria;Ploima;Asplanchnidae;Asplanchna;sp;ovaria;;;;g;a;g;;m;K;22;1300000;200000;NA;NA;NA;NA;NA;NA;NA;NA;NA;carnivore rotifers;C1
+6097;;;eukaryota;Animalia;;;;;Dauereier;;restingEggs;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+6098;;ZC0049;eukaryota;Animalia;Rotifera;Rotatoria;;;;;;;;;f;a;g;;i;R;21;150000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6099;;;eukaryota;Animalia;Rotifera;Rotatoria;;;;;eggs;;;;f;c;g;;i;U;21;50000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R1
+6201;JA120100;;eukaryota;Animalia;Rotifera;Eurotatoria;Flosculariacea;Conochilidae;Conochilus;sp;;;;;g;a;g;f;i;K;21;360000;30000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6202;;;eukaryota;Animalia;Rotifera;Eurotatoria;Flosculariacea;Conochilidae;Conochilus;unicornis;;;;;g;a;g;f;i;K;21;360000;30000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6203;;;eukaryota;Animalia;Rotifera;Eurotatoria;Flosculariacea;Trochosphaeridae ;Filinia;sp;;;Triarthra sp;;f;a;g;;i;R;21;480000;40000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6204;;;eukaryota;Animalia;Rotifera;Eurotatoria;Flosculariacea;Trochosphaeridae ;Filinia;longiseta;;;;;f;a;g;;i;K;21;480000;40000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6205;;;eukaryota;Animalia;Rotifera;Eurotatoria;Flosculariacea;Trochosphaeridae ;Filinia;terminalis;;;;;f;a;g;;i;K;21;450000;40000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6206;;;eukaryota;Animalia;Rotifera;Eurotatoria;Flosculariacea;Hexarthridae;Hexarthra;sp;;;;;g;a;g;;i;K;21;1200000;200000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6207;;;eukaryota;Animalia;Rotifera;Eurotatoria;Flosculariacea;Hexarthridae;Hexarthra;mira;;;;;g;a;g;;i;K;21;1200000;200000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6208;;;eukaryota;Animalia;Rotifera;Eurotatoria;Flosculariacea;Testudinellidae;Pompholyx;sp;;;;;f;a;g;;i;K;21;210000;15000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6209;;;eukaryota;Animalia;Rotifera;Eurotatoria;Flosculariacea;Testudinellidae;Pompholyx;sulcata;;;;;f;a;g;;i;K;21;210000;15000;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;R2
+6210;;;eukaryota;Animalia;Rotifera;Eurotatoria;Flosculariacea;Testudinellidae;Testudinella;sp;;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;NA
+6211;;;eukaryota;Animalia;Rotifera;Eurotatoria;Flosculariacea;Testudinellidae;Testudinella;patina;;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;NA
+6301;;;eukaryota;Animalia;Rotifera;Eurotatoria;Collothecacea;Collothecidae;Collotheca;sp;;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;NA
+6302;;;eukaryota;Animalia;Rotifera;Eurotatoria;Collothecacea;Collothecidae;Collotheca;pelagica;;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;NA
+6303;;;eukaryota;Animalia;Rotifera;Eurotatoria;Collothecacea;Collothecidae;Collotheca;mutabilis;;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;NA
+6304;;;eukaryota;Animalia;Rotifera;Eurotatoria;Collothecacea;Collothecidae;Collotheca;libera;;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore rotifers;NA
+6502;OB070100;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Alona;sp;;Alona sp;;;g;a;g;;k;R;31;45000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6503;OB070103E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Alona;quadrangularis;;Alona quadrangularis;;;g;a;g;;k;R;31;45000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6504;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Alona;rectangula;;Alona rectangula;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6505;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Alona;affinis;;Alona affinis;;;g;a;g;;k;;31;110000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6506;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Acroperus;sp;;Acroperus sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6507;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Alonella;sp;;Alonella sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6508;OB070202E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Alonella;nana;;Alonella nana;;;;;;;;;NA;3500000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6509;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Alonella;excisa;;Alonella excisa;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6510;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Camptocercus;sp;;Camptocercus sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6511;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Camptocercus;rectirostris;;Camptocercus rectirostris;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6512;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Ceriodaphnia;sp;;Ceriodaphnia sp;;;g;a;g;;k;R;31;68000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6513;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Ceriodaphnia;pulchella;;Ceriodaphnia pulchella;;;g;a;g;;k;R;31;68000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6514;OB070500E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Chydorus;sp;;Chydorus sp;;;g;a;g;;k;R;31;23000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6515;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Chydorus;sphaericus;;Chydorus sphaericus;;;g;a;g;;k;R;31;23000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6516;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Chydorus;latus;;Chydorus latus;;;g;a;g;;k;R;31;23000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6517;OB080100D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;sp SU;juvenile;Daphnia sp;;;g;a;g;W;k;R;31;140000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6518;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;sp SU;ovaria;Daphnia sp;;;g;a;g;W;k;R;31;450000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6519;OB080102E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;cucullata;adult;Daphnia cucullata;;;g;a;g;W;k;R;31;450000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6520;OB080105E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;galeata;adult;Daphnia galeata;;;g;a;g;;k;R;31;450000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6521;OB080105D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;galeata;juvenile;Daphnia galeata;;;g;a;g;;k;R;31;140000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6522;OB080104E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;hyalina;adult;Daphnia hyalina;;;g;a;g;W;k;R;31;450000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6523;OB080104D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;hyalina;juvenile;Daphnia hyalina;;;g;a;g;W;k;R;31;170000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6524;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;longispina SU;;Daphnia longispina;;;g;a;g;W;k;R;31;200000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6525;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;magna;;Daphnia magna;;;g;a;g;W;k;R;31;800000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6526;OB080103E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;pulex;;Daphnia pulex;;;g;a;g;W;k;R;31;600000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6527;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;sp;sexual female;Daphnia;;;g;a;g;W;k;R;31;470000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6528;OB080191D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;longispina SU;juvenile;Daphnia longispina;;;g;a;g;W;k;R;31;200000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6528;OB080191D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;longispina SU;juvenile;Daphnia longispina;;;g;a;g;W;k;R;31;200000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6528;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Sididae;Diaphanosoma;sp SU;;Diaphanosoma sp;;;g;a;g;;k;R;31;300000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6528;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Sididae;Diaphanosoma;sp SU;;Diaphanosoma sp;;;g;a;g;;k;R;31;300000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6529;OB060101E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Sididae;Diaphanosoma;brachyurum;;Diaphanosoma brachyurum;;;g;a;g;;k;R;31;300000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6530;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Eurycercus;sp;;Eurycercus sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6531;OB070401E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Eurycercus;lamellatus;;Eurycercus lamellatus;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6532;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Graptoleberis;sp;;Graptoleberis sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6533;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Holopediidae;Holopedium;gibberum;;Holopedium gibberum;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6534;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Moinidae;Moina;sp;;Moina sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6535;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Moinidae;Moina;brachiata;;Moina brachiata;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6536;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Monospilus;dispar;;Monospilus dispar;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6537;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Pleuroxus;sp;;Pleuroxus sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6538;;ZC0236;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Scapholeberis;sp;;Scapholeberis sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6539;OB060201G;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Sididae;Sida;crystallina;;Sida crystallina;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6540;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Simocephalus;sp;;Simocephalus sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6541;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Simocephalus;vetulus;;Simocephalus vetulus;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6542;OB090100D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Bosminidae;Bosmina;sp SU;juvenile;Bosmina sp;;;g;a;g;W;k;R;31;16000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6543;OB090100E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Bosminidae;Bosmina;sp SU;adult;Bosmina sp;;;g;a;g;W;k;R;31;32000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6544;OB090102E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Bosminidae;Bosmina;coregoni;adult;Bosmina coregoni;;;g;a;g;W;k;R;31;60000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6545;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Bosminidae;Bosmina;coregoni;juvenile;Bosmina coregoni;;;g;a;g;W;k;R;31;30000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6546;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Bosminidae;Bosmina;longispina;adult;Bosmina longispina;Eubosmina longispina;;g;a;g;W;k;R;31;60000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6547;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Bosminidae;Bosmina;longispina;juvenile;Bosmina longispina;Eubosmina longispina;;g;a;g;W;k;R;31;30000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6548;OB090101E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Bosminidae;Bosmina;longirostris;adult;Bosmina longirostris;;;g;a;g;W;k;R;31;60000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6549;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Bosminidae;Bosmina;longirostris;juvenile;Bosmina longirostris;;;g;a;g;W;k;R;31;30000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6550;OB090100F;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Bosminidae;Bosmina;sp SU;male;Bosmina sp;;;g;a;g;W;k;K;31;30000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6551;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;sp SU;male;Daphnia sp;;;g;a;g;W;k;K;31;140000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6552;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;sp SU;adult;Daphnia sp;;;g;a;g;W;k;R;31;450000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6553;OB090100H;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Bosminidae;Bosmina;sp SU;ovaria;Bosmina sp;;;g;a;g;W;k;R;31;32000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6554;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Sididae;Diaphanosoma;sp;juvenile;Diaphanosoma sp;;;g;a;g;W;k;R;31;100000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6555;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Sididae;Diaphanosoma;sp;ovaria;Diaphanosoma sp;;;g;a;g;W;k;R;31;300000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6556;OBC;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;;;ephippia;;;;g;c;g;;;K;1;20000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6557;OB090101H;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Bosminidae;Bosmina;longirostris;ovaria;Bosmina longirostris;;;g;a;g;W;k;R;31;60000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6558;OB070100E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Alona;sp;adult;Alona sp;;;g;a;g;;k;R;31;45000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6559;OB070100D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Alona;sp;juvenile;Alona sp;;;g;a;g;;k;R;31;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6560;OB070100H;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Chydoridae;Alona;sp;ovaria;Alona sp;;;g;a;g;;k;R;31;45000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6561;OB090101D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Bosminidae;Bosmina;longirostris;juvenile;Bosmina longirostris;;;g;a;g;W;k;R;31;30000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6562;OB090101F;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Bosminidae;Bosmina;longirostris;male;Bosmina longirostris;;;g;a;g;W;k;R;31;47000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6563;OB080301E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Ceriodaphnia;reticulata;adult;Ceriodaphnia reticulata;;;;;;;;;NA;150000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6564;OB080301D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Ceriodaphnia;reticulata;juvenile;Ceriodaphnia reticulata;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6565;OB080300E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Ceriodaphnia;sp;adult;Ceriodaphnia sp;;;g;a;g;;k;R;31;68000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6566;OB080300D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Ceriodaphnia;sp;juvenile;Ceriodaphnia sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6567;OB080102D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;cucullata;juvenile;Daphnia cucullata;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6568;OB080102H;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;cucullata;ovaria;Daphnia cucullata;;;g;a;g;W;k;R;31;160000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6569;OB080102G;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;cucullata;female;Daphnia cucullata;;;g;a;g;W;k;R;31;160000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6570;OB080105I;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;galeata;sexual female;Daphnia galeata;;;g;a;g;;k;R;31;450000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6571;OB080105F;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;galeata;male;Daphnia galeata;;;g;a;g;;k;R;31;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6572;OB080105H;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;galeata;ovaria;Daphnia galeata;;;g;a;g;;k;R;31;450000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6573;OB080105G;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;galeata;female;Daphnia galeata;;;g;a;g;;k;R;31;450000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6574;OB080104I;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;hyalina;sexual female;Daphnia hyalina;;;g;a;g;;k;R;31;450000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6575;OB080104F;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;hyalina;male;Daphnia hyalina;;;g;a;g;W;k;R;31;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6576;OB080104H;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;hyalina;ovaria;Daphnia hyalina;;;g;a;g;;k;R;31;450000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6577;OB080104G;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;hyalina;female;Daphnia hyalina;;;g;a;g;;k;R;31;450000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6578;OB080101E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;longispina;adult;Daphnia longispina;;;g;a;g;W;k;R;31;200000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6579;OB080101I;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;longispina;sexual female;Daphnia longispina;;;g;a;g;W;k;R;31;200000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6580;OB080101D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;longispina;juvenile;Daphnia longispina;;;g;a;g;W;k;R;31;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6581;OB080101F;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;longispina;male;Daphnia longispina;;;g;a;g;W;k;R;31;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6582;OB080101H;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;longispina;ovaria;Daphnia longispina;;;g;a;g;W;k;R;31;200000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6583;OB080101G;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;longispina;female;Daphnia longispina;;;g;a;g;W;k;R;31;200000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6584;OB080100E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;sp;adult;Daphnia sp;;;g;a;g;W;k;R;31;450000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6585;OB080191I;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;sp;sexual female;Daphnia sp;;;g;a;g;W;k;R;31;450000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6586;OB080191F;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;sp;male;Daphnia sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6587;OB080191H;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;sp;ovaria;Daphnia sp;;;g;a;g;W;k;R;31;450000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6588;OB080191G;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Daphnia;sp;female;Daphnia sp;;;g;a;g;W;k;R;31;450000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6589;OB060101I;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Sididae;Diaphanosoma;brachyurum;sexual female;Diaphanosoma brachyurum;;;g;a;g;;k;R;31;300000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6590;OB060101D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Sididae;Diaphanosoma;brachyurum;juvenile;Diaphanosoma brachyurum;;;g;a;g;;k;R;31;100000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6591;OB060101H;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Sididae;Diaphanosoma;brachyurum;ovaria;Diaphanosoma brachyurum;;;g;a;g;;k;R;31;300000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6592;OD01B;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Diaptomus;sp;eggs;Diaptomus sp;;;g;a;g;W;k;K;41;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6593;OD01K;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Diaptomus;sp;C1-C3;Diaptomus sp;;;g;a;g;W;k;K;41;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6594;OD01L;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Diaptomus;sp;C4-C5;Diaptomus sp;;;g;a;g;W;k;K;41;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6595;OB080301I;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Ceriodaphnia;reticulata;sexual female;Ceriodaphnia reticulata;;;;;;;;;NA;150000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6596;OB080301H;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;Ceriodaphnia;reticulata;ovaria;Ceriodaphnia reticulata;;;;;;;;;NA;150000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6801;OB120101E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Leptodoridae;Leptodora;kindtii;adult;Leptodora kindtii;;;h;a;g;W;;K;33;7200000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;invertebrate predators;C3
+6802;OB120101D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Leptodoridae;Leptodora;kindtii;juvenile;Leptodora Kindtii;;;h;a;g;W;;K;33;1400000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;invertebrate predators;C3
+6803;OB110101E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Cercopagididae;Bythotrephes;longimanus;adult;Bythotrephes longimanus;;;h;a;g;W;k;K;33;1900000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;invertebrate predators;C3
+6804;OB110101D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Cercopagididae;Bythotrephes;longimanus;juvenile;Bythotrephes longimanus;;;h;a;g;W;k;K;33;1900000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;invertebrate predators;C3
+6805;OB110201E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Polyphemidae;Polyphemus;pediculus SU;;Polyphemus pediculus;;;h;a;g;w;l;k;33;360000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6806;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Leptodoridae;Leptodora;sp;ovaria;Leptodora sp;;;h;a;g;W;;K;33;7500000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;invertebrate predators;C3
+6807;OB110101H;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Cercopagididae;Bythotrephes;longimanus;ovaria;Bythotrephes longimanus;;;h;a;g;W;k;K;33;1900000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;invertebrate predators;C3
+6808;;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Leptodoridae;Leptodora;sp;male;Leptodora sp;;;h;a;g;W;;K;33;6000000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;invertebrate predators;C3
+6809;OB110101F;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Cercopagididae;Bythotrephes;longimanus;male;Bythotrephes longimanus;;;h;a;g;W;k;k;33;2000000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;invertebrate predators;C3
+6810;OB110101I;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Cercopagididae;Bythotrephes;longimanus;sexual female;Bythotrephes longimanus;;;h;a;g;W;k;K;33;1900000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;invertebrate predators;C3
+6811;OB120101H;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Leptodoridae;Leptodora;kindtii;ovaria;Leptodora kindtii;;;h;a;g;W;;K;33;7200000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;invertebrate predators;C3
+6812;OB110201D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Polyphemidae;Polyphemus;pediculus;juvenile;Polyphemus pediculus;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+6901;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Diaptomus;sp;;Diaptomus sp;;;g;a;g;W;k;K;41;30000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6902;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Eudiaptomus;gracilis;C1-C3;Eudiaptomus gracilis;;;g;a;g;W;k;K;41;17000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6903;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Eudiaptomus;gracilis;C1-C5;Eudiaptomus gracilis;;;g;a;g;W;k;K;41;20000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6904;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Eudiaptomus;gracilic;C4-C5;Eudiaptomus gracilis;;;g;a;g;W;k;K;41;30000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6905;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Eudiaptomus;gracilis;male;Eudiaptomus gracilis;;;g;a;g;W;k;K;41;32000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6906;OD010101H;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Eudiaptomus;gracilis;ovaria;Eudiaptomus gracilis;;;g;a;g;W;k;K;41;42000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6907;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Eudiaptomus;graciloides;male;Eudiaptomus graciloides;;;g;a;g;W;k;K;41;35000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6908;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Eudiaptomus;graciloides;ovaria;Eudiaptomus graciloides;;;g;a;g;W;k;K;41;44000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6909;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Eudiaptomus;padanus;male;Eudiaptomus padanus;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6910;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Eudiaptomus;padanus;ovaria;Eudiaptomus padanus;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6911;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Mixodiaptomus;sp;juvenile;Mixodiaptomus sp;;;g;a;g;W;k;K;41;30000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6912;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Mixodiaptomus;laciniatus;male;Mixodiaptomus laciniatus;;;g;a;g;W;k;K;41;38000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6913;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Mixodiaptomus;laciniatus;female;Mixodiaptomus laciniatus;;;g;a;g;W;k;K;41;48000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6914;OD010101G;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Eudiaptomus;gracilis;female;Eudiaptomus gracilis;;;g;a;g;W;k;K;41;43000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6915;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Mixodiaptomus;laciniatus;ovaria;Mixodiaptomus laciniatus;;;g;a;g;W;k;K;41;50000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6916;OD010101E;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Eudiaptomus;gracilis;adult;Eudiaptomus gracilis;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6917;OD010101F;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Eudiaptomus;gracilis;male;Eudiaptomus gracilis;;;g;a;g;W;k;K;41;32000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6918;OD010100F;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Eudiaptomus;sp;male;Eudiaptomus sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6919;OD010100H;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Eudiaptomus;sp;ovaria;Eudiaptomus sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+6920;OD010100G;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;Eudiaptomus;sp;female;Eudiaptomus sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+7001;OE010100;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;sp;;Cyclops sp;;;g;a;g;W;;K;42;360000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7002;OE010101F;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;abyssorum;male;Cyclops abyssorum;;;g;a;g;W;;K;43;100000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7003;OE010101H;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;abyssorum;ovaria;Cyclops abyssorum;;;g;a;g;W;;K;43;110000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7004;OE010102F;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;vicinus;male;Cyclops vicinus;;;g;a;g;W;;K;43;90000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7005;OE010102H;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;vicinus;ovaria;Cyclops vicinus;;;g;a;g;W;;K;43;95000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7006;OE01K;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;sp SU;C1-C3;Cyclops sp;;;g;a;g;W;;K;42;18000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7007;OE01L;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;sp SU;C4-C5;Cyclops sp;;;g;a;g;W;;K;42;54000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7008;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;bohater SU;;Cyclops bohater;;;g;a;g;W;;K;43;360000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7009;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Mesocyclops;leuckarti;adult;Mesocyclops leuckarti male + female;;;g;a;g;W;;K;43;35000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7010;OE010301D;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Mesocyclops;leuckarti;juvenile;Mesocyclops leuckarti;;;g;a;g;W;;K;43;15000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7011;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Megacyclops;gigas;adult;Megacyclops gigas;;;h;a;g;W;;K;43;1300000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7012;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Megacyclops;gigas;juvenile;Megacyclops gigas;;;g;a;g;W;;K;43;500000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7013;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Macrocyclops;sp;;Macrocyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7014;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Macrocyclops;fuscus;male;Macrocyclops fuscus;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7015;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Macrocyclops;fuscus;female;Macrocyclops fuscus;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7016;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Macrocyclops;albidus;male;Macrocyclops albidus;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7017;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Macrocyclops;albidus;female;Macrocyclops albidus;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7018;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Macrocyclops;sp;juvenile;Macrocyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7019;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Diacyclops;sp;adult;Diacyclops ad;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7020;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Diacyclops;bicuspidatus;adult;Diacyclops bicuspidatus;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7021;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Diacyclops;sp;juvenile;Diacyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7022;OJ;ZC0243;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;;;;nauplia;;;;g;a;g;W;;K;42;2300000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+7023;OE010101E;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;abyssorum;female;Cyclops abyssorum;;;g;a;g;W;;K;43;110000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7024;OE010100G;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;vicinus;female;Cyclops vicinus;;;g;a;g;W;;K;43;95000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7025;OE010104E;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;bohater;female;Cyclops bohater;;;g;a;g;W;;K;43;410000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7026;OE010104H;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;bohater;ovaria;Cyclops bohater;;;g;a;g;W;;K;43;410000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7027;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Mesocyclops;leuckarti;female;Mesocyclops leuckarti;;;g;a;g;W;;K;43;35000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7028;OE010301H;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Mesocyclops;leuckarti;ovaria;Mesocyclops leuckarti;;;g;a;g;W;;K;43;35000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7029;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Acanthocyclops;sp;adult;Acanthocyclops sp;;;g;a;g;;l;;43;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7030;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Acanthocyclops;sp;juvenile;Acanthocyclops sp;;;g;a;g;;l;;43;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7031;OE010104K;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;bohater;C1-C3;Cyclops bohater;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7032;OE010104L;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;bohater;C4-C5;Cyclops bohater;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7033;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Thermocyclops;sp;male;Thermocyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7034;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Thermocyclops;sp;female;Thermocyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7035;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Thermocyclops;sp;juvenile;Thermocyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7036;OE010100H;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;sp;ovaria;Cyclops sp;;;g;a;g;W;;K;42;95000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7037;OE010500F;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Acanthocyclops;sp;male;Acanthocyclops sp;;;g;a;g;;l;;43;170000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7038;OE010500G;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Acanthocyclops;sp;female;Acanthocyclops sp;;;g;a;g;;l;;43;400000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7039;OE010101G;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;abyssorum;female;Cyclops abyssorum;;;g;a;g;W;;K;43;110000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7040;OE010104F;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;bohater;male;Cyclops bohater;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7041;OE010104G;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;bohater;female;Cyclops bohater;;;g;a;g;W;;K;43;410000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7042;OE01B;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;sp;eggs;Cyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7043;OE010103G;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;strenuus;female;Cyclops strenu;;;g;a;g;W;;K;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7044;OE010102G;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;vicinus;female;Cyclops vicinus;;;g;a;g;W;;K;43;95000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7045;OE010400F;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Diacyclops;sp;male;Diacyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7046;OE010400G;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Diacyclops;sp;female;Diacyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7047;OE010202L;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Megacyclops;gigas;C4-C5;Megacyclops gigas;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7048;OE010202H;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Megacyclops;gigas;ovaria;Megacyclops gigas;;;h;a;g;W;;K;43;1300000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7049;OE010202G;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Megacyclops;gigas;female;Megacyclops gigas;;;h;a;g;W;;K;43;1300000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7050;OE010200L;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Megacyclops;sp;C4-C5;Megacyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7051;OE010200F;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Megacyclops;sp;male;Megacyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7052;OE010200G;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Megacyclops;sp;female;Megacyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7053;OE010201L;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Megacyclops;viridis;C4-C5;Megacyclops viridis;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7054;OE010201F;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Megacyclops;viridis;male;Megacyclops viridis;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7055;OE010201H;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Megacyclops;viridis;ovaria;Megacyclops viridis;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7056;OE010201G;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Megacyclops;viridis;female;Megacyclops viridis;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7057;OE010301F;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Mesocyclops;leuckarti;male;Mesocyclops leuckarti;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7058;OE010301G;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Mesocyclops;leuckarti;female;Mesocyclops leuckarti;;;g;a;g;W;;K;43;35000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7059;OE010300E;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Mesocyclops;sp;adult;Mesocyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7060;OE010300D;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Mesocyclops;sp;juvenile;Mesocyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7061;OE010300F;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Mesocyclops;sp;male;Mesocyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7062;OE010300H;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Mesocyclops;sp;ovaria;Mesocyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7063;OE010300G;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Mesocyclops;sp;female;Mesocyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7064;OBA;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;;;;eggs;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+7065;OE010103F;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Cyclops;strenuus;male;Cyclops strenu;;;g;a;g;W;;K;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7065;OBC;;Eukaryota;Animalia;Arthropoda;Branchiopoda;;;;;ephippia;;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7066;OE010200H;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Megacyclops;sp;ovaria;Megacyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7067;OE010200K;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Megacyclops;sp;C1-C3;Megacyclops sp;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7101;;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Harpacticoida;Canthocamptidae;Canthocamptus;sp;;Canthocamptus sp;;;;;;;;;NA;35000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7102;OF080101;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Harpacticoida;Canthocamptidae;Canthocamptus;staphylinus;;Canthocamptus staphylinus;;;;;;;;;NA;35000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7103;OF080101E;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Harpacticoida;Canthocamptidae;Canthocamptus;staphylinus;adult;Canthocamptus staphylinus;;;;;;;;;NA;35000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7104;OF080101D;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Harpacticoida;Canthocamptidae;Canthocamptus;staphylinus;juvenile;Canthocamptus staphylinus;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7105;OF080101H;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Harpacticoida;Canthocamptidae;Canthocamptus;staphylinus;ovaria;Canthocamptus staphylinus;;;;;;;;;NA;35000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7106;OF080101G;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Harpacticoida;Canthocamptidae;Canthocamptus;staphylinus;female;Canthocamptus staphylinusW;;;;;;;;;NA;35000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+7501;NA010101M;;Eukaryota;Animalia;Mollusca;Bivalvia;Veneroida;Dreissenidae;Dreissena;polymorpha;larvae;Dreissena polymorpha;;;f;a;g;w;;R;51;100000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+7701;;;Eukaryota;Animalia;Arthropoda;Insecta;Diptera;Chaoboridae;Chaoborus;sp;larvae;Chaoborus sp;;;h;a;g;W;;K;63;9000000000;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;invertebrate predators;C3
+8000;UD;;eukaryota;Animalia;Arthropoda;Arachnida;Acari;;;;;Acari;;subclass;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+8001;HC;;eukaryota;Animalia;Platyhelminthes;Cestoda;;;;;;Cestodes;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+8002;TT020100N;;eukaryota;Animalia;Arthropoda;Insecta;Diptera;Chironomidae;Chironomus;sp;larvae;Chironomus sp ;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+8003;TT010100N;;eukaryota;Animalia;Arthropoda;Insecta;Diptera;Chaoboridae;Chaoborus;sp;larvae;Coreth sp ;Corethra sp;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;invertebrate predators;C3
+8004;TT010101N;;eukaryota;Animalia;Arthropoda;Insecta;Diptera;Chaoboridae;Chaoborus;crystallinus;larvae;Corethraplumicornis;Corethra plumicornis;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;invertebrate predators;C3
+8005;HC010100D;;eukaryota;Animalia;Arthropoda;Cestoda;Proteocephalidea;Proteocephalidae;Proteocephalus;sp;juvenile;Proteocephalus sp juv ;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+9000;OB090000S;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Bosminidae;;;;Bosminidae;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+9001;ODOEOFS;;eukaryota;Animalia;Arthropoda;Maxillopoda;Copepoda;;;;;Copepoda;;subclass;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+9002;O0000000S;;eukaryota;Animalia;Arthropoda;Crustacea;;;;;;Crustacea;;subphylum;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+9003;OE010000S;;eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;;;;Cyclopidae;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;C2
+9004;OB080000S;ZC0242;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Daphniidae;;;;Daphniidae;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+9005;OD010000S;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;Diaptomidae;;;;Diaptomidae;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;H2
+9006;0;;eukaryota;Animalia;;;;;;;;Fauna gezählt;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+9007;T0000000S;;eukaryota;Animalia;Arthropoda;Hexapoda;;;;;;Hexapoda;;subphylum;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+9008;TN;;eukaryota;Animalia;Arthropoda;Insecta;;;;;larvae;Insekten;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+9010;VCD;;eukaryota;Animalia;Chordata;Osteichthyes;;;;;larvae;Jungfische;;Superclass;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+9011;OB120000S;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Leptodoridae;;;;Leptodoridae;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;invertebrate predators;C3
+9012;JC;;eukaryota;Animalia;Nematoda;;;;;;;Nematodes;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+9013;KA;;eukaryota;Animalia;Annelida;Clitellata;Oligochaeta;;;;;Oligochaeta;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+9014;OC;ZC0270;eukaryota;Animalia;Arthropoda;Ostracoda;;;;;;Ostracoda;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+9015;OB000000S;;eukaryota;Animalia;Arthropoda;Branchiopoda;Phyllopoda;;;;;Phyllopoda;;subclass;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+9016;OB110000S;;eukaryota;Animalia;Arthropoda;Branchiopoda;Diplostraca;Polyphemidae;;;;Polyphemidae;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;herbivore cladocerans;H1
+9017;B0000000S;;eukaryota;Protozoa;Rhizopoda;;;;;;;Rhizopoda;;incertae sedis;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+9018;L;;eukaryota;Animalia;Tardigrada;;;;;;;Tardigrada;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+9019;HA;;eukaryota;Animalia;Platyhelminthes;Turbellaria;;;;;;Turbellaria;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+9020;00000000S;;eukaryota;Animalia;;;;;;;;Zoologie alles;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+9021;D0000000S;ZC0033;eukaryota;Chromalveolata;Ciliophora;Ciliatea;;;;;;Ciliata;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;ciliates;NA
+9500;OD01----B;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;;;;eggs;Eipaket Calanoida;;id_CH new 13.07.2021 (match id_ZH);;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;NA
+9501;OD01----K;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;;;;C1-C3;Calanoida C1-C3;;id_CH new 13.07.2021 (match id_ZH);;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;NA
+9502;OD01----L;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Calanoida;;;;C4-C5;Calanoida C4-C5;;id_CH new 13.07.2021 (match id_ZH);;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;calanoid copepods;NA
+9503;OE01----B;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;;;;eggs;Eipakete Cyclopoida;;id_CH new 13.07.2021 (match id_ZH);;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;NA
+9504;OE01----K;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;;;;C1-C3;Cyclopoida C1-C3 ;;id_CH new 13.07.2021 (match id_ZH);;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;NA
+9505;OE01----L;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;;;;C4-C5;Cyclopoida C4-C5 ;;id_CH new 13.07.2021 (match id_ZH);;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;cyclopoid copepods;NA
+9506;OE010400H;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Diacyclops;sp;ovaria;Diacyclops  sp. ov.;;id_CH new 13.07.2021 (match id_ZH);;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;;NA
+9507;OE010500H;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Acanthocyclops;sp;ovaria;Acanthocyclops sp. ov.;;id_CH new 13.07.2021 (match id_ZH);;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;;NA
+9508;OE010701H;;Eukaryota;Animalia;Arthropoda;Maxillopoda;Cyclopoida;Cyclopidae;Macrocyclops;sp;ovaria;Macrocyclops albidus ov.;;id_CH new 13.07.2021 (match id_ZH);;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;;NA
+9509;OB070301D;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Anomopoda;Chydoridae;Leydigia;leydigi;juvenile;Leydigia leydigi ;Leydigia quadrangularis;id_CH new 13.07.2021 (match id_ZH);;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;;NA
+9510;OB070301E;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Anomopoda;Chydoridae;Leydigia;leydigi;adult;Leydigia leydigi;Leydigia quadrangularis;id_CH new 13.07.2021 (match id_ZH);;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;;NA
+9511;OB070301H;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Anomopoda;Chydoridae;Leydigia;leydigi;ovaria;Leydigia leydigi;Leydigia quadrangularis;id_CH new 13.07.2021 (match id_ZH);;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;;NA
+9512;OB070301I;;Eukaryota;Animalia;Arthropoda;Branchiopoda;Anomopoda;Chydoridae;Leydigia;leydigi;ephippia;Leydigia leydigi;Leydigia quadrangularis;id_CH new 13.07.2021 (match id_ZH);;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;;NA
+9999;;;;;;;;;;;;deleted positions in old formate;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+10000;;;;;;;;;;;;centrifuge volume;;;;;;;;;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA

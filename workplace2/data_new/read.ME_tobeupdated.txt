@@ -1,0 +1,33 @@
+units:
+
+nutrients (NH4_N,PO4_P,NO3_N) are in mg/L
+temperature is in Celsius
+
+phyto and microzooplankton abundances are in indviduals per L
+zooplankton abundances are in individuals per m2 (when originally given in indv/m3 we multiplied the abundance by the sampling depth)
+
+ID_CH can be converted into taxonomic classification using meta DB's (found here: )
+
+all variables are averaged over the water column (meta lake data can be found here: )
+
+temp_chem (discrete samples, average over all dephts)
+large_zoo BAL and SEM (continuous samples, sum over dephts (n=2) and id_CH. Then divided all values by 2; this accounts for indv. that are found only at one depth.) Check this!! Because if they are in /m3 we have to multiply by depth to calculate the /m2 (i.e. transform indv./L into grams per m2: quantity * biovolume * depth * 10^-9, so to transform indv/m3 into indv/m2 we have to do indv/m3*depth)				
+
+large_zoo ZHR is already in m2 with two levels, below 20 and above 20. To get the zooplankton over the water column we summed them and divided by 2
+
+
+
+contacts:
+
+BAL and SEM: Robert Lovas (Robert.Lovas@lu.ch)
+ZHR: Oliver Koester and Michael 
+GRE: Francesco Pomati (francesco.pomati@eawag.ch)
+HAL: Lukas de Ventura
+
+
+
+Problems:
+
+High value in GRE for temperature on 2003-06-16 (maybe remove?) 17.47°C over the water column --> no measures after 12.5 m. Exclude!
+High value in GRE for temperature on 2009-08-10 (maybe remove?) 16.80°C over the water column --> no measures after 12.5 m. Exclude!
+
