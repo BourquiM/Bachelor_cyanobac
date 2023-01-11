@@ -3,6 +3,7 @@ load_libraries <- function(){
   library(ggplot2)
   library(ggpubr)
   library(GGally)
+  library(caret)
   }
 
 
@@ -14,7 +15,7 @@ databases <- function(){
   #' 
   cat("\n-----\n")  # This line only makes the console look clearer when running the functions after another. It draws five "-" and adds new lines
   cat("Importing the meta databases 'meta_db_phyto' and 'meta_db_zoo'\n\n")
-  setwd("~/ETHZ/Bachelor thesis/R/workplace2/data_new")
+  setwd("~/GitHub/Bachelor_cyanobac/workplace2/data_new")
   # for Phytoplankton:
   meta_db_phyto <- read.delim("metaDBphyto_2020.csv", sep = ";", dec = ",")
   
@@ -91,11 +92,11 @@ treat_noBiovolP <- function(lake){
     ggtitle(label = paste("Abundance of Phyto taxa in", lake, "lake"))
   
   # Saving the plot in a pdf file in the "graphs" folder of the "no_biovol" folder
-  setwd("~/ETHZ/Bachelor thesis/R/workplace2/graphs_lists")
+  setwd("~/GitHub/Bachelor_cyanobac/workplace2/graphs_lists")
   pdf(paste(lake, "_noBiovolP.pdf", sep = ""))
   print(green_red)
   dev.off()
-  setwd("~/ETHZ/Bachelor thesis/R/workplace2/data_new/")
+  setwd("~/GitHub/Bachelor_cyanobac/workplace2/data_new/")
   
   # back to the data without a biovolume
   noBiovolP <- noBiovolP %>% arrange(id_CH)
@@ -117,10 +118,10 @@ treat_noBiovolP <- function(lake){
   noBiovolP <- noBiovolP %>% arrange(date)  # sort by date
   
   # exporting this data
-  setwd("~/ETHZ/Bachelor thesis/R/workplace2/no_biovol")
+  setwd("~/GitHub/Bachelor_cyanobac/workplace2/no_biovol")
   write.csv(noBiovolP, paste(lake, "_phyto_datapoints_without_biovol.csv", sep = ""))  # all data points whose taxa don't have a biovolume in the database
   write.csv(taxa_noBiovolP, paste(lake, "_phyto_taxa_without_biovol.csv", sep = ""))  # same, resumed by taxa
-  setwd("~/ETHZ/Bachelor thesis/R/workplace2/data_new")
+  setwd("~/GitHub/Bachelor_cyanobac/workplace2/data_new")
   
   # Making the data frames global
   taxa_noBiovolP <<- taxa_noBiovolP
@@ -239,7 +240,7 @@ ready_phyto_final <- function(){
   phyto_final <-  phyto_final %>% mutate(d_chrooco = tot_phyto - chrooco)
   phyto_final <-  phyto_final %>% mutate(d_nosto = tot_phyto - nosto)
   phyto_final <-  phyto_final %>% mutate(d_oscillato = tot_phyto - oscillato)
-  phyto_final <-  phyto_final %>% mutate(r_cyanobac = tot_cyanobac - oscillato)
+  phyto_final <-  phyto_final %>% mutate(d_cyanobac = tot_phyto - tot_cyanobac)
   
   # Now the phyto_final is ready to be put into the big data table. Time to make the variable global:
   phyto_final <<- phyto_final
@@ -249,7 +250,7 @@ ready_phyto_final <- function(){
 # 4) Getting the zoo data ready ####
 ready_zoo_raw <- function(){
   #' 
-  #' This function makes sure the data type of the columns is what it needs to be, and integrates the info from the meta database meta_db_zoo into the data, for calculations later on
+  #' This function makes sure the data type of the columns is what it needs to be
   #' 
   zoo_raw$depth <- factor(zoo_raw$depth)  # only one depth
   zoo_raw$unit <- factor(zoo_raw$unit)  # only one unit
@@ -314,7 +315,7 @@ ready_zoo_agg <- function(){
   zoo_agg <- inner_join(zoo_agg, tot_zoo, by = "date")  # adding the total zoo to the table
   zoo_agg <- inner_join(zoo_agg, microzoo, by = "date")  # Adding the microzooplankton back to the table (Rotifera, Ciliophora, Naupleii)
   
-  # Next 3 lines show that the orders weren't always observed --> there are NA's in the data frame
+  # Next 3 lines show that the orders weren't always observed --> consequence: there are NA's in the data frame
   cat("Daphniidae were observed", nrow(zoo_agg %>% filter(order == "Diplostraca")), "times\n")
   cat("Calanoida were observed", nrow(zoo_agg %>% filter(order == "Calanoida")), "times\n")
   cat("Cyclopoida were observed", nrow(zoo_agg %>% filter(order == "Cyclopoida")), "times")
@@ -365,9 +366,8 @@ ready_zoo_final <- function(){
 # 7) importing + plotting the temp-chem  data ####
 ready_temp_chem <- function(){
   #' 
-  #' This function preparates the chemistry and temperature data to be put into the end data frame
+  #' This function prepares the chemistry and temperature data to be put into the end data frame
   #' 
-  setwd("~/ETHZ/Bachelor thesis/R/workplace2/data_new/temp_chem")
   temp_chem$date <- as.Date(temp_chem$date, "%Y-%m-%d") # transforming the date to a Date format
   temp_chem$depth <- factor(temp_chem$depth)  #Only 1 depth -> factor
   
@@ -399,9 +399,10 @@ ready_end_frame <- function(){
 save_plots <- function(lake){
   #' 
   #' This function plots the data for each phytoplankton order (Nosto, Chrooco, Oscillato) and for the total phytoplankton biovolume
-  #' It also begins the work of the linear regressions, by plotting the data (it doesn't show any plots but saves them in an external pdf file instead)
+  #' It also begins the work of the linear regressions, by plotting the data (it doesn't show any plots)
+  #' All plots are then saved in a single pdf file (the phytoplankton data, basic scatterplots and the temp-chem data)
   #' 
-  #' Note: In each plot, there is the warning message "Removed XX rows containing missing values ('geom_point()'). This is normal and indicates the ggplot() is removing the NA values
+  #' Note: In each plot, there is the warning message "Removed XX rows containing missing values ('geom_point()')". This is normal and indicates the ggplot() is removing the NA values
   #' 
   
   # Plotting Nostocales and Oscillatoriales
@@ -515,7 +516,7 @@ save_plots <- function(lake){
   pairs_chem_log10_zoo <- ggpairs(chem_log10_zoo, lower = list(continuous = wrap("smooth", colour = "cornflowerblue", size = 0.1)), title = "Scatter plots, chemistry - log10(zooplankton)")
   
   # Making a pdf file out of the figure with all the plots, and saving it in the "graphs_lists" folder
-  setwd("~/ETHZ/Bachelor thesis/R/workplace2/graphs_lists")
+  setwd("~/GitHub/Bachelor_cyanobac/workplace2/graphs_lists")
   pdf(paste(lake, "_plot_temp_chem.pdf", sep = ""))
   print(figure_tempchem)
   print(figure_all)
@@ -529,13 +530,15 @@ save_plots <- function(lake){
   print(pairs_chem_zoo)
   print(pairs_chem_log10_zoo)
   dev.off()
-  setwd("~/ETHZ/Bachelor thesis/R/workplace2/data_new")
+  setwd("~/GitHub/Bachelor_cyanobac/workplace2/data_new")
   
   # Making the data frames for the linear regressions and their plots global
-  norm_biovol <<- norm_biovol
-  log10_biovol <<- log10_biovol
-  pairs_norm <<- pairs_norm
-  pairs_log10 <<- pairs_log10
+  chem_phyto <<- chem_phyto
+  chem_log10_phyto <<- chem_log10_phyto
+  zoo_phyto <<- zoo_phyto
+  zoo_phyto_log10 <<- zoo_phyto_log10
+  chem_zoo <<- chem_zoo
+  chem_log10_zoo <<- chem_log10_zoo
   
   # and the plots
   figure_all <<- figure_all
@@ -559,11 +562,6 @@ save_plots <- function(lake){
 #' il Faut enlever les noms des axes chroococcales dans le pdf temp_chem
 #' 
 #' 
-#' Un fichier de fonctions externe, pitié, j'en ai marre de toujours devoir galérer
-#' 
-#' Mais je pense que ça doit encore attendre un tout petit peu, parce que Pinelopi veut plein de graphes
-#' 
-#' Je fais vite-F les graphes qu'elle m'a demandés, puis je bosse là-dessus
 #' 
 #' 
 #' 
