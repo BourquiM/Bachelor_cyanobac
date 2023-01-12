@@ -1,5 +1,6 @@
 #' 
 #' This file works with the data of the BAL lake as an example
+#' 
 
 
 setwd("~/GitHub/Bachelor_cyanobac/workplace2/Code")
@@ -157,10 +158,17 @@ par(mfrow = c(1,1))
 # Both the TA-plot and the QQ-plot don't look good enough (QQ is curved too much, and the TA plot has too much of a diamond/lozenge shape)
 
 
+
 # 10) Random forest ####
 #' 
 #' I think these steps have to be done individually for each lake, because I have to analyse each summary to see where there are unbalanced features, and such
 #' 
+
+# The next two lines makes the code run in parallel (this means that the code runs faster). Not so important for the small size of the data sets I have, but it's a good habit to have
+cl = makePSOCKcluster(5)
+registerDoParallel(cl)
+# Don't forget to stop the cluster when done working:
+# stopCluster(cl)
 
 summary(end_frame)
 end_frame <- end_frame %>% select(-c(date, depth))  #removing the date and the depth from the DF - we don't need those anymore
@@ -168,6 +176,13 @@ end_frame <- end_frame %>% select(-c(date, depth))  #removing the date and the d
 # Working with the r_cyanobac as a response variable
 # Would make sense to create a function creating the 3D graphs he showed me 
 featurePlot(x = end_frame[, c("tot_phyto", "NH4_N", "NO3_N", "temperature")], y = end_frame$r_cyanobac, plot = "scatter", labels = c("", "ratio cyanobac - tot_phyto"))
+
+
+
+# 10.1) Random Forest on r_cyanobac ####
+#' 
+#' Choosing r_cyanobac as the response variable and creating the models for this variable
+#' 
 
 r_cyanobac_frame <- end_frame %>% select(r_cyanobac, NH4_N:calanoida)  
 
@@ -177,52 +192,209 @@ trainIndex <- createDataPartition(r_cyanobac_frame$r_cyanobac, p = 0.7, list = F
 training <- r_cyanobac_frame[trainIndex, ]  # creating the training data set
 test <- r_cyanobac_frame[-trainIndex, ]  # creating the testing data set
 
-# Realizing the imputation 
-pre_knn <- preProcess(training, method = "knnImpute", k = round(sqrt(nrow(training))), verbose = T)
-pre_bag <- preProcess(training, method = "bagImpute")
-pre_median <- preProcess(training, method = "medianImpute")
+# Finding out if there's correlated variables in the data set 
+frame_cor <- cor(r_cyanobac_frame)
+findCorrelation(frame_cor, verbose = TRUE)
+# We get the value "0" out of it, which means there are no highly correlated variables 
 
-# Applying it to the data
-imputed_knn <- predict(pre_knn, newdata = training)  # Warning: this automatically centers and scales the data. Means that following formula is applied to it: (X - mean(column) / sd(column))
+# Realizing the imputation:
+# For the training set 
+pre_knn <- preProcess(training, method = "knnImpute", k = round(sqrt(nrow(training))), verbose = T)
+pre_bag <- preProcess(training, method = c("center", "scale", "bagImpute"), verbose = T)
+pre_median <- preProcess(training, method = c("center", "scale", "medianImpute"), verbose = T)
+#for the testing set: 
+test_pre_knn <- preProcess(test, method = "knnImpute", k = round(sqrt(nrow(training))), verbose = T)
+test_pre_bag <- preProcess(test, method = c("center", "scale", "bagImpute"), verbose = T)
+test_pre_median <- preProcess(test, method = c("center", "scale", "medianImpute"), verbose = T)
+
+# Applying it to the data: 
+# For the training set
+imputed_knn <- predict(pre_knn, newdata = training)  # Warning: kNN automatically centers and scales the data. Means that following formula is applied to it: (X - mean(column) / sd(column))
 imputed_bag <- predict(pre_bag, newdata = training)
 imputed_median <- predict(pre_median, newdata = training)
+# For the testing set
+test_imputed_knn <- predict(test_pre_knn, newdata = test)  # Warning: kNN automatically centers and scales the data. Means that following formula is applied to it: (X - mean(column) / sd(column))
+test_imputed_bag <- predict(test_pre_bag, newdata = test)
+test_imputed_median <- predict(test_pre_median, newdata = test)
 
-# Ce que je veux faire: faire les modèles avec tous ces sets de données, les comparer, tester les modèles.
+# Evaluating algorithmically which variables contain low information, and that could thus be removed (pre-modelling):
+subsets <- c(1:9)  # specifying the amount of variables I want to have in each test (here, the computed will be conducting tests with all the possible amounts of variables) 
+# for the kNN-imputed data:
+rfeCtrl <- rfeControl(functions = rfFuncs, method = "cv", verbose = FALSE)  # the first arguments allows to specify which method we want to use
+system.time(rfProfile_knn <- rfe(x = imputed_knn[, -1], y = imputed_knn$r_cyanobac, sizes = subsets, rfeControl = rfeCtrl))  # this code always takes a bit of time, which is totally normal
+# for the bag-imputed data:
+system.time(rfProfile_bag <- rfe(x = imputed_bag[, -1], y = imputed_bag$r_cyanobac, sizes = subsets, rfeControl = rfeCtrl))  # this code always takes a bit of time, which is totally normal
+# for the median-imputed data:
+system.time(rfProfile_median <- rfe(x = imputed_median[, -1], y = imputed_median$r_cyanobac, sizes = subsets, rfeControl = rfeCtrl))  # this code always takes a bit of time, which is totally normal
 
+# Displaying the results:
+rfProfile_knn 
+rfProfile_bag 
+rfProfile_median 
 
-system.time(rf_knn <- train(r_cyanobac ~., data = trainTransformed, method = "rf", importance = TRUE, trControl = trainControl(method = "cv", number = 10)))
+tg <- data.frame(mtry = c(1:9))  # set the tuneGrid argument to be the same for all models 
+fitControl <- trainControl(method = "cv", number = 10)  # set the cross-validation control to be the same for all models
+
+# Running the actual Random Forest models
+set.seed(123)
+system.time(rf_knn <- train(r_cyanobac ~., data = imputed_knn, method = "rf", importance = TRUE, tuneGrid = tg, trControl = fitControl))
+system.time(rf_bag <- train(r_cyanobac ~., data = imputed_bag, method = "rf", importance = TRUE, tuneGrid = tg, trControl = fitControl))
+system.time(rf_median <- train(r_cyanobac ~., data = imputed_median, method = "rf", importance = TRUE, tuneGrid = tg, trControl = fitControl))
+
+# Displaying their results
 rf_knn
+rf_bag
+rf_median
+
+# The random forest with bagging imputation tends to have the best results
+
+# Analyzing variable importance for each model (post-modelling):
+varImp_knn <- varImp(rf_knn)
+knnPlot <- plot(varImp_knn, main = "Variable importance (Random Forest, kNN imputation)")
+
+varImp_bag <- varImp(rf_bag)
+bagPlot <- plot(varImp_bag, main = "Variable importance (Random Forest, bagging imputation)")
+
+varImp_median <- varImp(rf_median)
+medianPlot <- plot(varImp_median, main = "Variable importance (Random Forest, median imputation")
+
+print(impPlots <- ggarrange(knnPlot, bagPlot,medianPlot,
+                      ncol = 1, nrow = 3, align = "hv"))
+
+# Testing the model:
+# First, using the model on the testing data to create a test prediction
+test_knn <- predict(rf_knn, newdata = test_imputed_knn)
+test_bag <- predict(rf_bag, newdata = test_imputed_bag)
+test_median <- predict(rf_median, newdata = test_imputed_median)
+
+# Then evaluate how precise this test prediction was
+defaultSummary(data = data.frame(obs = test$r_cyanobac, pred = test_knn))
+defaultSummary(data = data.frame(obs = test$r_cyanobac, pred = test_bag))
+defaultSummary(data = data.frame(obs = test$r_cyanobac, pred = test_median))  # Generally, the model with the median imputation has the best results (lowest RMSE)
 
 
-preProcValues <- preProcess(x = training, method = c("center", "scale" ,"medianImpute"))  # Creating the model that will transform the data
-trainTransformed <- predict(preProcValues, newdata = training)  # transformation of the training data set into Z-scores, using the model we just created
-# This one has 10 fold cross-validation and importance ranking of the variables
-system.time(rf_r_cyanobac <- train(r_cyanobac ~., data = trainTransformed, method = "rf", importance = TRUE, trControl = trainControl(method = "cv", number = 10)))
-rf_r_cyanobac
+
+# 10.2) Random Forest on d_cyanobac ####
+#' 
+#' Choosing d_cyanobac as the response variable and creating the models for this variable
+#' Most of the code is the same as for r_cyanobac
+#' 
+
+d_cyanobac_frame <- end_frame %>% select(d_cyanobac, r_cyanobac, NH4_N:calanoida)  
+
+# Partitioning the data
+set.seed(123) # doesn't need to be 123, but having a value here makes the test reproducible
+trainIndex <- createDataPartition(d_cyanobac_frame$d_cyanobac, p = 0.7, list = FALSE)  # Choosing which indices of the data set will be for training, and which ones for testing. 70% are for training, 30% for testing (p = 0.7)
+training <- d_cyanobac_frame[trainIndex, ]  # creating the training data set
+test <- d_cyanobac_frame[-trainIndex, ]  # creating the testing data set
+
+# Finding out if there's correlated variables in the data set 
+frame_cor <- cor(d_cyanobac_frame)
+findCorrelation(frame_cor, verbose = TRUE)
+# We get the value "0" out of it, which means there are no highly correlated variables 
+
+# Realizing the imputation:
+# For the training set 
+pre_knn <- preProcess(training, method = "knnImpute", k = round(sqrt(nrow(training))), verbose = T)
+pre_bag <- preProcess(training, method = c("center", "scale", "bagImpute"), verbose = T)
+pre_median <- preProcess(training, method = c("center", "scale", "medianImpute"), verbose = T)
+#for the testing set: 
+test_pre_knn <- preProcess(test, method = "knnImpute", k = round(sqrt(nrow(training))), verbose = T)
+test_pre_bag <- preProcess(test, method = c("center", "scale", "bagImpute"), verbose = T)
+test_pre_median <- preProcess(test, method = c("center", "scale", "medianImpute"), verbose = T)
+
+# Applying it to the data: 
+# For the training set
+imputed_knn <- predict(pre_knn, newdata = training)  # Warning: kNN automatically centers and scales the data. Means that following formula is applied to it: (X - mean(column) / sd(column))
+imputed_bag <- predict(pre_bag, newdata = training)
+imputed_median <- predict(pre_median, newdata = training)
+# For the testing set
+test_imputed_knn <- predict(test_pre_knn, newdata = test)  # Warning: kNN automatically centers and scales the data. Means that following formula is applied to it: (X - mean(column) / sd(column))
+test_imputed_bag <- predict(test_pre_bag, newdata = test)
+test_imputed_median <- predict(test_pre_median, newdata = test)
+
+# Evaluating algorithmically which variables contain low information, and that could thus be removed (pre-modelling):
+subsets <- c(1:10)  # specifying the amount of variables I want to have in each test (here, the computed will be conducting tests with all the possible amounts of variables) 
+# for the kNN-imputed data:
+rfeCtrl <- rfeControl(functions = rfFuncs, method = "cv", verbose = FALSE)  # the first arguments allows to specify which method we want to use
+system.time(rfProfile_knn <- rfe(x = imputed_knn[, -1], y = imputed_knn$d_cyanobac, sizes = subsets, rfeControl = rfeCtrl))  # this code always takes a bit of time, which is totally normal
+# for the bag-imputed data:
+system.time(rfProfile_bag <- rfe(x = imputed_bag[, -1], y = imputed_bag$d_cyanobac, sizes = subsets, rfeControl = rfeCtrl))  # this code always takes a bit of time, which is totally normal
+# for the median-imputed data:
+system.time(rfProfile_median <- rfe(x = imputed_median[, -1], y = imputed_median$d_cyanobac, sizes = subsets, rfeControl = rfeCtrl))  # this code always takes a bit of time, which is totally normal
+
+# Displaying the results:
+rfProfile_knn 
+rfProfile_bag 
+rfProfile_median 
+
+tg <- data.frame(mtry = c(1:9))  # set the tuneGrid argument to be the same for all models 
+fitControl <- trainControl(method = "cv", number = 10)  # set the cross-validation control to be the same for all models
+
+# Running the actual Random Forest models
+set.seed(123)
+system.time(rf_knn <- train(d_cyanobac ~., data = imputed_knn, method = "rf", importance = TRUE, tuneGrid = tg, trControl = fitControl))
+system.time(rf_bag <- train(d_cyanobac ~., data = imputed_bag, method = "rf", importance = TRUE, tuneGrid = tg, trControl = fitControl))
+system.time(rf_median <- train(d_cyanobac ~., data = imputed_median, method = "rf", importance = TRUE, tuneGrid = tg, trControl = fitControl))
+
+# Displaying their results
+rf_knn
+rf_bag
+rf_median
+
+# The random forest with kNN imputation tends to have the best results
+
+# Analyzing variable importance for each model (post-modelling):
+varImp_knn <- varImp(rf_knn)
+knnPlot <- plot(varImp_knn, main = "Variable importance (Random Forest, kNN imputation)")
+
+varImp_bag <- varImp(rf_bag)
+bagPlot <- plot(varImp_bag, main = "Variable importance (Random Forest, bagging imputation)")
+
+varImp_median <- varImp(rf_median)
+medianPlot <- plot(varImp_median, main = "Variable importance (Random Forest, median imputation")
+
+print(impPlots <- ggarrange(knnPlot, bagPlot,medianPlot,
+                            ncol = 1, nrow = 3, align = "hv"))
+
+# Testing the model:
+# First, using the model on the testing data to create a test prediction
+test_knn <- predict(rf_knn, newdata = test_imputed_knn)
+test_bag <- predict(rf_bag, newdata = test_imputed_bag)
+test_median <- predict(rf_median, newdata = test_imputed_median)
+
+# Then evaluate how precise this test prediction was
+defaultSummary(data = data.frame(obs = test$r_cyanobac, pred = test_knn))
+defaultSummary(data = data.frame(obs = test$r_cyanobac, pred = test_bag)) # Generally, the model with the bagging imputation has the best results (lowest RMSE)
+defaultSummary(data = data.frame(obs = test$r_cyanobac, pred = test_median))  
 
 
-preProcValues <- preProcess(x = training, method = c("bagImpute"))  # Creating the model that will transform the data
-trainTransformed <- predict(preProcValues, newdata = training)  # transformation of the training data set into Z-scores, using the model we just created
-system.time(rf_r_cyanobac <- train(r_cyanobac ~., data = trainTransformed, method = "rf", importance = TRUE, trControl = trainControl(method = "cv", number = 10)))
-rf_r_cyanobac
+
+# 11) "3D" Visualization of the most important predictors ####
+# Making 3D plots based on the most important predictors
+
+# This is a work in progress, I cannot get the graphs like I want them to be
+
+plot1 <- ggplot(data = end_frame) + 
+  geom_point(aes(x = cyclopoida, y = PO4_P)) + 
+  scale_colour_manual()
 
 
-preProcValues <- preProcess(x = training, method = c("medianImpute"))  # Creating the model that will transform the data
-trainTransformed <- predict(preProcValues, newdata = training)  # transformation of the training data set into Z-scores, using the model we just created
-# This one has 10 fold cross-validation and importance ranking of the variables
-system.time(rf_r_cyanobac <- train(r_cyanobac ~., data = training, method = "rf", na.action = na.omit, importance = TRUE, trControl = trainControl(method = "cv", number = 10)))
-rf_r_cyanobac
+plot2 <- ggplot(data = end_frame, aes(x = cyclopoida, y = PO4_P)) + 
+  geom_raster(aes(fill = round(r_cyanobac, 2))) +
+  ggtitle("Just a random title")
+plot2
 
+rounded <- round(end_frame, 2)
 
+plot3 = ggplot(rounded, aes(NO3_N, PO4_P)) +
+  geom_raster(aes(fill = r_cyanobac)) +
+  ggtitle("3D Plotting in R from 2D_ggplot_graphics") +
+  labs(caption = "Package: rayshader")
+plot3
 
+plot4 <- ggplot(rounded, aes(x = PO4_P, y = temperature)) + 
+  geom_tile(aes(fill = r_cyanobac))
+ggplotly(plot4)
 
-
- 
-
-
-system.time(rf_r_cyanobac1 <- train(r_cyanobac ~., data = trainTransformed, method = "rf", importance = TRUE, trControl = trainControl(method = "cv", number = 10)))
-
-system.time(rf_r_cyanobac1 <- train(r_cyanobac ~ NH4_N + NO3_N + PO4_P + temperature, data = trainy, method = "rf", importance = TRUE, trControl = trainControl(method = "cv", number = 10), num.trees = 999, importance = "permutation"))
-
-testTransformed <- predict(preProcValues, newdata = test)  # transformation of the testing data set into Z-scores, using the model we just created
 

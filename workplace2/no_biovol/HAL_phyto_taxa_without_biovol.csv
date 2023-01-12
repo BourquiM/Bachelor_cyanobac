@@ -1,9 +1,9 @@
 "","id_CH","genus","species","kremer_key","abundance","occurrences","volume_um.3.1","mn_abundance"
-"1",1,"Leptothrix","ochracea","",69031261240,36,"1",1917535034.44444
-"2",2,"Leptothrix","echinata","",54435400,91,"1",598191.208791209
-"3",3,"Siderocapsa","sp","",38000,2,"1",19000
-"4",4,"Lampropedia","hyalina","",1480000,3,"10",493333.333333333
-"5",5,"Thiopedia","rosea","",3839000,2,"10",1919500
+"1",1,"Leptothrix","ochracea","",69031261240,36,1,1917535034.44444
+"2",2,"Leptothrix","echinata","",54435400,91,1,598191.208791209
+"3",3,"Siderocapsa","sp","",38000,2,1,19000
+"4",4,"Lampropedia","hyalina","",1480000,3,10,493333.333333333
+"5",5,"Thiopedia","rosea","",3839000,2,10,1919500
 "6",7,"","","",1230000,3,NA,410000
-"7",10,"Leptothrix","pseudovacuolata","",1585400,13,"1",121953.846153846
-"8",50,"Planctomyces","sp","",685000,6,"1",114166.666666667
+"7",10,"Leptothrix","pseudovacuolata","",1585400,13,1,121953.846153846
+"8",50,"Planctomyces","sp","",685000,6,1,114166.666666667

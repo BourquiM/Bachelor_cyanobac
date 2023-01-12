@@ -4,11 +4,11 @@ load_libraries <- function(){
   library(ggpubr)
   library(GGally)
   library(caret)
+  library(doParallel)
   }
 
 
 
-# 0) loading the meta databases ####
 databases <- function(){
   #' 
   #' This function imports the meta databases meta_db_phyto and meta_db_zoo and makes the necessary changes, so that they can then be used in the later code
@@ -38,7 +38,6 @@ databases <- function(){
 
 
 
-# 1) Getting the lake phyto data ready ####
 ready_phyto_selec <- function(){
   #' 
   #' This function makes sure the data type of the columns is what it needs to be, and integrates the info from the meta database meta_db_phyto into the data, for calculations later on
@@ -48,6 +47,9 @@ ready_phyto_selec <- function(){
   phyto_raw$depth <- factor(phyto_raw$depth)  # only one depth
   phyto_raw$unit <- factor(phyto_raw$unit)  # only one unit
   phyto_raw$date <- as.Date(phyto_raw$date, "%Y-%m-%d") # transforming the date to a Date format
+  if (class(phyto_raw$date) != "Date") {
+    phyto_raw$abundance <- as.integer(phyto_raw$abundance)
+    }
   phyto_raw <- phyto_raw %>% filter(!is.na(abundance))  # Removing the data points that don't have an abundance (I don't know why, some data points don't have an abundance. Can't keep them because of the "aggregate" function)
   
   phyto_selec <- inner_join(phyto_raw, (meta_db_phyto %>% select(id_CH, order, genus, species, volume_um.3, kremer_key, mdn_nu.biovol, volume_um.3.1, species_buergi)), by="id_CH")  # Adding the needed info columns to the phyto data table
@@ -59,7 +61,7 @@ ready_phyto_selec <- function(){
 }
 
 
-# 2) Taking a look at the phyto taxa without a biovolume #####
+
 treat_noBiovolP <- function(lake){
   #' 
   #' This function achieves multiple purposes:
@@ -68,7 +70,7 @@ treat_noBiovolP <- function(lake){
   #' 3) Cleaning + exporting this data so it can be analyzed accross lakes (see "B1_phyto_noBiovolume.R)
   #' 
   cat("\n-----\n")
-  nrow(noBiovolP <- subset(phyto_selec, is.na(volume_um.3)))  #there are 140 rows without a volume_um.3 biovolume...
+  nrow(noBiovolP <- subset(phyto_selec, is.na(volume_um.3)))  #there are rows without a volume_um.3 biovolume...
   # Now combined with the kremer biovolume:
   noBiovolP <- subset(noBiovolP, is.na(mdn_nu.biovol))  # removes the rows missing a mdn_nu.biovol 
   cat(nrow(noBiovolP), "entries don't have a biovolume in the phyto data (no volume_um.3 AND no mdn_nu.biovol)..\n")
@@ -131,7 +133,6 @@ treat_noBiovolP <- function(lake){
 
 
 
-# 3) Now the phyto data with a Biovolume, preparing it for the final data table ####
 ready_phyto_clean <- function(){
   #'
   #' This function adds a biovolume-per-cell value to a select few taxa that missed one (these values were found in online literature)
@@ -169,6 +170,8 @@ ready_phyto_clean <- function(){
   phyto_selec <<- phyto_selec
   phyto_clean <<- phyto_clean
 }
+
+
 
 ready_phyto_agg <- function(){
   #' 
@@ -247,7 +250,7 @@ ready_phyto_final <- function(){
 }
 
 
-# 4) Getting the zoo data ready ####
+
 ready_zoo_raw <- function(){
   #' 
   #' This function makes sure the data type of the columns is what it needs to be
@@ -262,10 +265,6 @@ ready_zoo_raw <- function(){
 
 
 
-
-
-
-# 5) The zoo taxa ####
 ready_zoo_agg <- function(){
   #' 
   #' This function calculates the total abundance of the Zooplankton, and of the orders Cyclopoida and Calanoida, as well as the family Daphniidae and the created category of Microzooplankton (Rotifera, Ciliophora and Naupleii) by date
@@ -363,7 +362,6 @@ ready_zoo_final <- function(){
 
 
 
-# 7) importing + plotting the temp-chem  data ####
 ready_temp_chem <- function(){
   #' 
   #' This function prepares the chemistry and temperature data to be put into the end data frame
@@ -377,7 +375,6 @@ ready_temp_chem <- function(){
 
 
 
-# 8) Creating the big data frame, and plots ####
 ready_end_frame <- function(){
   #' 
   #' This function puts the prepared phytoplankton data, the zooplankton data with the chemistry and temperature data into a single data frame
@@ -443,11 +440,9 @@ save_plots <- function(lake){
     geom_smooth(aes(x = date, y = r_nosto, colour = "Ratio Nosto")) +
     geom_smooth(aes(x = date, y = r_oscillato, colour = "Ratio Oscillato")) +
     geom_smooth(aes(x = date, y = r_chrooco, colour = "Ratio Chrooco")) +
-    scale_y_continuous(name = "Ratio of the phyto orders", labels = scales::percent, sec.axis = sec_axis(trans =~., name = "", labels = scales::percent)) + 
+    scale_y_continuous(lim = c(0, 1), name = "Ratio of the phyto orders", labels = scales::percent, sec.axis = sec_axis(trans =~., name = "", labels = scales::percent)) + 
     scale_colour_manual(name = "", breaks = c("Ratio Nosto", "Ratio Chrooco", "Ratio Oscillato"), values = c("Ratio Nosto" = "blue", "Ratio Chrooco" = "deeppink", "Ratio Oscillato" = "gold")) +
     theme(legend.position = "bottom")
-  
-
   
   # Plotting the biovolume of the 2 cyanobacteria orders, the total phytoplankton biovolume and the total abundance of each Zooplankton group
   zoo_phyto <- ggplot(data = end_frame) + 
@@ -478,14 +473,6 @@ save_plots <- function(lake){
                              zoo_phyto, phyto,
                              ncol = 2, nrow = 2, align = "hv",
                              common.legend = TRUE, legend = "top")
-  
-  
-  
-  
-  #' Ajuster la scale right, puis faire un graph pour les trends uniquement
-  #' Il faut que je regarde si c'est vraiment nécessaire de faire des graphes pour ça
-  #' --> pour ça, il faut les mettre dans figure_trends 
-  
   
   
   # Creating the data frames for the linear regressions. The second one has log10-values for the biovolumes
@@ -555,15 +542,3 @@ save_plots <- function(lake){
 
 
 
-# ####
-#' TODO Ce que je peux encore faire:
-#' 
-#' 
-#' il Faut enlever les noms des axes chroococcales dans le pdf temp_chem
-#' 
-#' 
-#' 
-#' 
-#' 
-#' 
-#' Mettre à jour les x-axes des plots noBiovolP et noBiovolZ. C'est à faire si je veux tous les mettres dans un seul pdf, ils ne commencent pas tous la même année
