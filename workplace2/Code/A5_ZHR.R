@@ -102,7 +102,7 @@ ready_temp_chem()  # Preparing the chemistry and temperature data
 
 
 # Putting the phytoplankton, zooplankton and chemistry + temperature data into a single frame
-ready_end_frame()  # Gathering all the phytoplankton, zooplankton, temperature and chemistry data into a single data frame. And making it ready for analysis
+ready_end_frame(lake)  # Gathering all the phytoplankton, zooplankton, temperature and chemistry data into a single data frame. And making it ready for analysis
 
 save_plots(lake)  # plotting the phytoplankton data and the basic scatterplots for the linear regressions and saving them with the temp-chem data in a single pdf file
 

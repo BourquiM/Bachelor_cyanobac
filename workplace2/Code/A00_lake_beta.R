@@ -1,5 +1,5 @@
 #' 
-#' This file works with the data of the BAL lake as an example
+#' This file uses the BAL data as an example
 #' 
 
 
@@ -107,7 +107,7 @@ ready_temp_chem()  # Preparing the chemistry and temperature data
 
 
 # Putting the phytoplankton, zooplankton and chemistry + temperature data into a single frame
-ready_end_frame()  # Gathering all the phytoplankton, zooplankton, temperature and chemistry data into a single data frame. And making it ready for analysis
+ready_end_frame(lake)  # Gathering all the phytoplankton, zooplankton, temperature and chemistry data into a single data frame. And making it ready for analysis
 
 save_plots(lake)  # plotting the phytoplankton data and the basic scatterplots for the linear regressions and saving them with the temp-chem data in a single pdf file
 
@@ -173,16 +173,14 @@ registerDoParallel(cl)
 summary(end_frame)
 end_frame <- end_frame %>% select(-c(date, depth))  #removing the date and the depth from the DF - we don't need those anymore
 
-# Working with the r_cyanobac as a response variable
-# Would make sense to create a function creating the 3D graphs he showed me 
-featurePlot(x = end_frame[, c("tot_phyto", "NH4_N", "NO3_N", "temperature")], y = end_frame$r_cyanobac, plot = "scatter", labels = c("", "ratio cyanobac - tot_phyto"))
-
 
 
 # 10.1) Random Forest on r_cyanobac ####
 #' 
 #' Choosing r_cyanobac as the response variable and creating the models for this variable
 #' 
+featurePlot(x = end_frame[, c("tot_phyto", "NH4_N", "NO3_N", "temperature")], y = end_frame$r_cyanobac, plot = "scatter", labels = c("", "ratio cyanobac - tot_phyto"))
+
 
 r_cyanobac_frame <- end_frame %>% select(r_cyanobac, NH4_N:calanoida)  
 
@@ -203,7 +201,7 @@ pre_knn <- preProcess(training, method = "knnImpute", k = round(sqrt(nrow(traini
 pre_bag <- preProcess(training, method = c("center", "scale", "bagImpute"), verbose = T)
 pre_median <- preProcess(training, method = c("center", "scale", "medianImpute"), verbose = T)
 #for the testing set: 
-test_pre_knn <- preProcess(test, method = "knnImpute", k = round(sqrt(nrow(training))), verbose = T)
+test_pre_knn <- preProcess(test, method = "knnImpute", k = round(sqrt(nrow(test))), verbose = T)
 test_pre_bag <- preProcess(test, method = c("center", "scale", "bagImpute"), verbose = T)
 test_pre_median <- preProcess(test, method = c("center", "scale", "medianImpute"), verbose = T)
 
@@ -256,10 +254,10 @@ varImp_bag <- varImp(rf_bag)
 bagPlot <- plot(varImp_bag, main = "Variable importance (Random Forest, bagging imputation)")
 
 varImp_median <- varImp(rf_median)
-medianPlot <- plot(varImp_median, main = "Variable importance (Random Forest, median imputation")
+medianPlot <- plot(varImp_median, main = "Variable importance (Random Forest, median imputation)")
 
 print(impPlots <- ggarrange(knnPlot, bagPlot,medianPlot,
-                      ncol = 1, nrow = 3, align = "hv"))
+                            ncol = 1, nrow = 3, align = "hv"))
 
 # Testing the model:
 # First, using the model on the testing data to create a test prediction
@@ -279,6 +277,7 @@ defaultSummary(data = data.frame(obs = test$r_cyanobac, pred = test_median))  # 
 #' Choosing d_cyanobac as the response variable and creating the models for this variable
 #' Most of the code is the same as for r_cyanobac
 #' 
+featurePlot(x = end_frame[, c("r_cyanobac", "NH4_N", "NO3_N", "temperature")], y = end_frame$d_cyanobac, plot = "scatter", labels = c("", "ratio cyanobac - tot_phyto"))
 
 d_cyanobac_frame <- end_frame %>% select(d_cyanobac, r_cyanobac, NH4_N:calanoida)  
 
@@ -299,7 +298,7 @@ pre_knn <- preProcess(training, method = "knnImpute", k = round(sqrt(nrow(traini
 pre_bag <- preProcess(training, method = c("center", "scale", "bagImpute"), verbose = T)
 pre_median <- preProcess(training, method = c("center", "scale", "medianImpute"), verbose = T)
 #for the testing set: 
-test_pre_knn <- preProcess(test, method = "knnImpute", k = round(sqrt(nrow(training))), verbose = T)
+test_pre_knn <- preProcess(test, method = "knnImpute", k = round(sqrt(nrow(test))), verbose = T)
 test_pre_bag <- preProcess(test, method = c("center", "scale", "bagImpute"), verbose = T)
 test_pre_median <- preProcess(test, method = c("center", "scale", "medianImpute"), verbose = T)
 
@@ -352,7 +351,7 @@ varImp_bag <- varImp(rf_bag)
 bagPlot <- plot(varImp_bag, main = "Variable importance (Random Forest, bagging imputation)")
 
 varImp_median <- varImp(rf_median)
-medianPlot <- plot(varImp_median, main = "Variable importance (Random Forest, median imputation")
+medianPlot <- plot(varImp_median, main = "Variable importance (Random Forest, median imputation)")
 
 print(impPlots <- ggarrange(knnPlot, bagPlot,medianPlot,
                             ncol = 1, nrow = 3, align = "hv"))
@@ -370,6 +369,32 @@ defaultSummary(data = data.frame(obs = test$r_cyanobac, pred = test_median))
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 11) "3D" Visualization of the most important predictors ####
 # Making 3D plots based on the most important predictors
 
@@ -383,7 +408,7 @@ plot1 <- ggplot(data = end_frame) +
 plot2 <- ggplot(data = end_frame, aes(x = cyclopoida, y = PO4_P)) + 
   geom_raster(aes(fill = round(r_cyanobac, 2))) +
   ggtitle("Just a random title")
-plot2
+# plot2 this makes R crash
 
 rounded <- round(end_frame, 2)
 
@@ -398,3 +423,22 @@ plot4 <- ggplot(rounded, aes(x = PO4_P, y = temperature)) +
 ggplotly(plot4)
 
 
+library(plotmo)
+
+plotmo(rf_bag, degree1=0, degree2 = c("PO4_P", "temperature"), persp.ticktype="detailed", persp.nticks=6, col.persp = "azure", shade = 0.4, cex.axis = 0.6, cex = 1.5, pmethod = "apartdep")  
+
+plotmo(rf_bag, degree1=0, degree2 = c("temperature", "PO4_P"), type2 ="image", image.col = rev(rainbow(99, start = 0.05, end = 0.65, alpha = 0.8)), pmethod = "apartdep", main = "Nostocales")
+
+library(pdp)
+
+p1<-partial(rf_bag, pred.var = "PO4_P", plot = TRUE,
+            plot.engine = "ggplot2")
+p2<-partial(rf_bag, pred.var = "temperature", plot = TRUE,
+            plot.engine = "ggplot2")
+ggarrange(p1, p2, ncol = 1)   
+
+
+rwb <- colorRampPalette(c("blue", "white", "red"))
+i1 <- plotPartial(partial(rf_bag, pred.var = c("PO4_P", "temperature")), 
+                  contour = TRUE, col.regions = rwb)
+i1

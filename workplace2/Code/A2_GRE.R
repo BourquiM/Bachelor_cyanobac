@@ -23,13 +23,15 @@ lake <- "GRE"  # Defining the name of the lake. This will be used when saving da
   
   # this part isolates the id_CH that are not id's but already species names in the id_CH field
   num_only <- phyto_raw
-  num_only$id_CH <- as.integer(num_only$id_CH)  # "NAs introduced by coercion" is normal and wanted
-  num_only <- num_only[complete.cases(num_only$id_CH),]
-  num_only$id_CH <- as.character(num_only$id_CH)
-  char_only <- phyto_raw %>% anti_join(num_only, by="id_CH")
-  dim(char_only_aggregated <-aggregate(char_only$abundance, by= list(char_only$id_CH), sum))  # here are all 4 id's that pose a problem
-  # See the README files for notes on these
+  num_only$id_CH <- as.integer(num_only$id_CH)  # "NAs introduced by coercion" is normal and wanted: it marks the rows whose id_CH are not integers with NA
+  num_only <- num_only[complete.cases(num_only$id_CH),]  # isolates the non-integer id_CH rows
+  num_only$id_CH <- as.character(num_only$id_CH)  # now transforming the id_CH back to a character. This is necessary for the anti_join in the next step: the id_CH in num_only and in phyto_raw need to be the same type
+  char_only <- phyto_raw %>% anti_join(num_only, by="id_CH")  # isolating the character id_CH (i.e. removing the numbers typed as characters)
+  dim(char_only_aggregated <-aggregate(char_only$abundance, by= list(char_only$id_CH), sum)) 
+  # See the README files for notes about these
   names(char_only_aggregated) = c("id_CH", "tot. abundance")
+  
+  char_only_aggregated  # here are all 4 id's that pose a problem
   
   phyto_raw <- phyto_raw %>% mutate(id_CH = replace(id_CH, id_CH == "Scenedesmus linearis", 3025)) # replaces the "Scenedesmus linearis" by its real id_CH. We chose to keep this taxon only
   
@@ -37,7 +39,7 @@ lake <- "GRE"  # Defining the name of the lake. This will be used when saving da
   phyto_raw$id_CH <- as.integer(phyto_raw$id_CH)
   phyto_raw <- phyto_raw[complete.cases(phyto_raw$id_CH),]  # The NA's removed had an id_CH written in Characters (see the step isolating id_CH that are species names)
   
-  phyto_raw$date <- as.Date(phyto_raw$date, "%d/%m/%Y") # transforming the date to a Date format
+  phyto_raw$date <- as.Date(phyto_raw$date, "%d/%m/%Y")  # transforming the date to a Date format. Has to be done here, because it is a different format than in the other lakes
 }
 
 # Getting the phytoplankton data ready
@@ -125,7 +127,7 @@ ready_temp_chem()  # Preparing the chemistry and temperature data
 
 
 # Putting the phytoplankton, zooplankton and chemistry + temperature data into a single frame
-ready_end_frame()  # Gathering all the phytoplankton, zooplankton, temperature and chemistry data into a single data frame. And making it ready for analysis
+ready_end_frame(lake)  # Gathering all the phytoplankton, zooplankton, temperature and chemistry data into a single data frame. And making it ready for analysis
 
 save_plots(lake)  # plotting the phytoplankton data and the basic scatterplots for the linear regressions and saving them with the temp-chem data in a single pdf file
 
@@ -136,7 +138,9 @@ save_plots(lake)  # plotting the phytoplankton data and the basic scatterplots f
 
 
 # 9) Linear regressions (or log-linear regressions) ####
-# Je pense que ça, on ne peut pas tout le faire en fonction, parce qu'il faut jeter un oeil à ce qui doit être modellisé avant de le faire
+#' 
+#' Don't look at these too much, I noticed some of the functions are wrong. I'll update them if we think it's necessary to keep the linear appraoch (if not, I'll delete them)
+#' 
 
 # these are simple scatterplots, for all variable relative to each other 
 pairs_norm 
@@ -177,10 +181,10 @@ par(mfrow = c(1,1))
 
 # 10) Random forest ####
 #' 
-#' I think these steps have to be done individually for each lake, because I have to analyse each summary to see where there are unbalanced features, and such
+#' 
 #' 
 
-# The next two lines makes the code run in parallel (this means that the code runs faster). Not so important for the small size of the data sets I have, but it's a good habit to have
+# The next two lines makes the code run in parallel (in short: this means that the code runs faster). Not so important for the small size of the data sets I have, but it's a good habit to have (on my machine, it usually divides the modelling time by 3)
 cl = makePSOCKcluster(5)
 registerDoParallel(cl)
 # Don't forget to stop the cluster when done working:
@@ -188,6 +192,10 @@ registerDoParallel(cl)
 
 summary(end_frame)
 end_frame <- end_frame %>% select(-c(date, depth))  #removing the date and the depth from the DF - we don't need those anymore
+
+# log-transforming the response variables (common logarithm, i.e. base of 10)
+end_frame <- end_frame %>% mutate(across(c(tot_phyto:tot_cyanobac, d_chrooco:d_cyanobac), ~log10(.)))  # log10-transformation
+end_frame <- end_frame %>% mutate(across(c(tot_phyto:tot_cyanobac, d_chrooco:d_cyanobac), ~replace(., . == -Inf, 0)))  # log10(0) = -Inf, so we have to replace every -Inf with 0 after the log10-transformation
 
 
 
@@ -197,8 +205,15 @@ end_frame <- end_frame %>% select(-c(date, depth))  #removing the date and the d
 #' 
 featurePlot(x = end_frame[, c("tot_phyto", "NH4_N", "NO3_N", "temperature")], y = end_frame$r_cyanobac, plot = "scatter", labels = c("", "ratio cyanobac - tot_phyto"))
 
-r_cyanobac_frame <- end_frame %>% select(r_cyanobac, NH4_N:calanoida)  
+# Selecting only the features we are interested in
+r_cyanobac_frame <- end_frame %>% select(r_cyanobac, NH4_N:calanoida)  # for the total cyanobacteria ratio
+chrooco_frame <- end_frame %>% select(r_chrooco, NH4_N:calanoida)  # The Chroococcales ratio 
+nosto_frame <- end_frame %>% select(r_nosto, NH4_N:calanoida)  # The Nostocales ratio
+oscillato_frame <- end_frame %>% select(r_oscillato, NH4_N:calanoida)  # The Oscilaltoriales ratio
 
+
+
+# 10.1.1) Random forest on the total cyanobacteria ratio
 # Partitioning the data
 set.seed(123) # doesn't need to be 123, but having a value here makes the test reproducible
 trainIndex <- createDataPartition(r_cyanobac_frame$r_cyanobac, p = 0.7, list = FALSE)  # Choosing which indices of the data set will be for training, and which ones for testing. 70% are for training, 30% for testing
@@ -210,176 +225,230 @@ frame_cor <- cor(r_cyanobac_frame)
 findCorrelation(frame_cor, verbose = TRUE)
 # We get the value "0" out of it, which means there are no highly correlated variables 
 
-# Realizing the imputation:
-# For the training set 
-pre_knn <- preProcess(training, method = "knnImpute", k = round(sqrt(nrow(training))), verbose = T)
-pre_bag <- preProcess(training, method = c("center", "scale", "bagImpute"), verbose = T)
-pre_median <- preProcess(training, method = c("center", "scale", "medianImpute"), verbose = T)
-#for the testing set: 
-test_pre_knn <- preProcess(test, method = "knnImpute", k = round(sqrt(nrow(test))), verbose = T)
-test_pre_bag <- preProcess(test, method = c("center", "scale", "bagImpute"), verbose = T)
-test_pre_median <- preProcess(test, method = c("center", "scale", "medianImpute"), verbose = T)
+# In the GRE data set, there is only 1 NA in the NO3_N predictor. Bag-imputing it
+train_pre_imp <- preProcess(training, method = "bagImpute", verbose = TRUE)  # creating the models to impute the missing data
+test_pre_imp <- preProcess(test, method = "bagImpute", verbose = TRUE)
 
-# Applying it to the data: 
-# For the training set
-imputed_knn <- predict(pre_knn, newdata = training)  # Warning: kNN automatically centers and scales the data. Means that following formula is applied to it: (X - mean(column) / sd(column))
-imputed_bag <- predict(pre_bag, newdata = training)
-imputed_median <- predict(pre_median, newdata = training)
-# For the testing set
-test_imputed_knn <- predict(test_pre_knn, newdata = test)  # Warning: kNN automatically centers and scales the data. Means that following formula is applied to it: (X - mean(column) / sd(column))
-test_imputed_bag <- predict(test_pre_bag, newdata = test)
-test_imputed_median <- predict(test_pre_median, newdata = test)
-
-# Evaluating algorithmically which variables contain low information, and that could thus be removed (pre-modelling):
-subsets <- c(1:9)  # specifying the amount of variables I want to have in each test (here, the computed will be conducting tests with all the possible amounts of variables) 
-# for the kNN-imputed data:
-rfeCtrl <- rfeControl(functions = rfFuncs, method = "cv", verbose = FALSE)  # the first arguments allows to specify which method we want to use
-system.time(rfProfile_knn <- rfe(x = imputed_knn[, -1], y = imputed_knn$r_cyanobac, sizes = subsets, rfeControl = rfeCtrl))  # this code always takes a bit of time, which is totally normal
-# for the bag-imputed data:
-system.time(rfProfile_bag <- rfe(x = imputed_bag[, -1], y = imputed_bag$r_cyanobac, sizes = subsets, rfeControl = rfeCtrl))  # this code always takes a bit of time, which is totally normal
-# for the median-imputed data:
-system.time(rfProfile_median <- rfe(x = imputed_median[, -1], y = imputed_median$r_cyanobac, sizes = subsets, rfeControl = rfeCtrl))  # this code always takes a bit of time, which is totally normal
-
-# Displaying the results:
-rfProfile_knn 
-rfProfile_bag 
-rfProfile_median 
+training <- predict(train_pre_imp, newdata = training)  # actually imputing the missing data
+test <- predict(test_pre_imp, newdata = test)
 
 tg <- data.frame(mtry = c(1:9))  # set the tuneGrid argument to be the same for all models 
-fitControl <- trainControl(method = "cv", number = 10)  # set the cross-validation control to be the same for all models
+fitControl <- trainControl(method = "cv", number = 10)  # set the cross-validation control to be the same for all models.
+# DO NO USE LOOCV AS THE METHOD, TAKES VERY LONG TO RUN (250 seconds), and the results are less accurate than 10-fold cv
 
-# Running the actual Random Forest models
-set.seed(123)
-system.time(rf_knn <- train(r_cyanobac ~., data = imputed_knn, method = "rf", importance = TRUE, tuneGrid = tg, trControl = fitControl))
-system.time(rf_bag <- train(r_cyanobac ~., data = imputed_bag, method = "rf", importance = TRUE, tuneGrid = tg, trControl = fitControl))
-system.time(rf_median <- train(r_cyanobac ~., data = imputed_median, method = "rf", importance = TRUE, tuneGrid = tg, trControl = fitControl))
+set.seed(123)  # Setting a seed, so that the model is reproducible 
+system.time(rf_r_cyano <- train(r_cyanobac ~., data = training, method = "rf", importance = TRUE, tuneGrid = tg, trControl = fitControl, na.action = na.omit))  # Running the actual Random Forest model
 
-# Displaying their results
-rf_knn
-rf_bag
-rf_median
+# Displaying the result
+rf_r_cyano
 
-# The random forest with bagging imputation tends to have the best results
-# Unexpected: the best mtry = 1
+# Analyzing variable importance for the model (post-modelling)
+varImp_r_cyano <- varImp(rf_r_cyano)
+r_cyano_impPlot <- plot(varImp_r_cyano, main = "Variable importance (Random Forest, no imputation")
+print(r_cyano_impPlot)
 
-# Analyzing variable importance for each model (post-modelling):
-varImp_knn <- varImp(rf_knn)
-knnPlot <- plot(varImp_knn, main = "Variable importance (Random Forest, kNN imputation)")
-
-varImp_bag <- varImp(rf_bag)
-bagPlot <- plot(varImp_bag, main = "Variable importance (Random Forest, bagging imputation)")
-
-varImp_median <- varImp(rf_median)
-medianPlot <- plot(varImp_median, main = "Variable importance (Random Forest, median imputation)")
-
-print(impPlots <- ggarrange(knnPlot, bagPlot,medianPlot,
-                            ncol = 1, nrow = 3, align = "hv"))
-
-# Testing the model:
-# First, using the model on the testing data to create a test prediction
-test_knn <- predict(rf_knn, newdata = test_imputed_knn)
-test_bag <- predict(rf_bag, newdata = test_imputed_bag)
-test_median <- predict(rf_median, newdata = test_imputed_median)
-
-# Then evaluate how precise this test prediction was
-defaultSummary(data = data.frame(obs = test$r_cyanobac, pred = test_knn))
-defaultSummary(data = data.frame(obs = test$r_cyanobac, pred = test_bag))  # The model with the bagging imputation seems to work best
-defaultSummary(data = data.frame(obs = test$r_cyanobac, pred = test_median))  
+# # Testing the model:
+# test_r_cyano <- predict(rf_r_cyano, newdata = test)
+# 
+# # Then evaluate how precise this model is, based on the test prediction
+# defaultSummary(data = data.frame(obs = test$r_cyanobac, pred = test_r_cyano))
 
 
 
-# 10.2) Random Forest on d_cyanobac ####
-#' 
-#' Choosing d_cyanobac as the response variable and creating the models for this variable
-#' Most of the code is the same as for r_cyanobac
-#' 
-featurePlot(x = end_frame[, c("r_cyanobac", "NH4_N", "NO3_N", "temperature")], y = end_frame$d_cyanobac, plot = "scatter", labels = c("", "ratio cyanobac - tot_phyto"))
 
-d_cyanobac_frame <- end_frame %>% select(d_cyanobac, r_cyanobac, NH4_N:calanoida)  
-
+# 10.1.2) Random forest on the chroococcales ratio
 # Partitioning the data
 set.seed(123) # doesn't need to be 123, but having a value here makes the test reproducible
-trainIndex <- createDataPartition(d_cyanobac_frame$d_cyanobac, p = 0.7, list = FALSE)  # Choosing which indices of the data set will be for training, and which ones for testing. 70% are for training, 30% for testing (p = 0.7)
-training <- d_cyanobac_frame[trainIndex, ]  # creating the training data set
-test <- d_cyanobac_frame[-trainIndex, ]  # creating the testing data set
+trainIndex <- createDataPartition(chrooco_frame$r_chrooco, p = 0.7, list = FALSE)  # Choosing which indices of the data set will be for training, and which ones for testing. 70% are for training, 30% for testing
+training <- chrooco_frame[trainIndex, ]  # creating the training data set
+test <- chrooco_frame[-trainIndex, ]  # creating the testing data set
 
 # Finding out if there's correlated variables in the data set 
-frame_cor <- cor(d_cyanobac_frame)
+frame_cor <- cor(chrooco_frame)
 findCorrelation(frame_cor, verbose = TRUE)
 # We get the value "0" out of it, which means there are no highly correlated variables 
 
-# Realizing the imputation:
-# For the training set 
-pre_knn <- preProcess(training, method = "knnImpute", k = round(sqrt(nrow(training))), verbose = T)
-pre_bag <- preProcess(training, method = c("center", "scale", "bagImpute"), verbose = T)
-pre_median <- preProcess(training, method = c("center", "scale", "medianImpute"), verbose = T)
-#for the testing set: 
-test_pre_knn <- preProcess(test, method = "knnImpute", k = round(sqrt(nrow(test))), verbose = T)
-test_pre_bag <- preProcess(test, method = c("center", "scale", "bagImpute"), verbose = T)
-test_pre_median <- preProcess(test, method = c("center", "scale", "medianImpute"), verbose = T)
+# In the GRE data set, there is only 1 NA in the NO3_N predictor. Bag-imputing it
+train_pre_imp <- preProcess(training, method = "bagImpute", verbose = TRUE)  # creating the models to impute the missing data
+test_pre_imp <- preProcess(test, method = "bagImpute", verbose = TRUE)
 
-# Applying it to the data: 
-# For the training set
-imputed_knn <- predict(pre_knn, newdata = training)  # Warning: kNN automatically centers and scales the data. Means that following formula is applied to it: (X - mean(column) / sd(column))
-imputed_bag <- predict(pre_bag, newdata = training)
-imputed_median <- predict(pre_median, newdata = training)
-# For the testing set
-test_imputed_knn <- predict(test_pre_knn, newdata = test)  # Warning: kNN automatically centers and scales the data. Means that following formula is applied to it: (X - mean(column) / sd(column))
-test_imputed_bag <- predict(test_pre_bag, newdata = test)
-test_imputed_median <- predict(test_pre_median, newdata = test)
-
-# Evaluating algorithmically which variables contain low information, and that could thus be removed (pre-modelling):
-subsets <- c(1:10)  # specifying the amount of variables I want to have in each test (here, the computed will be conducting tests with all the possible amounts of variables) 
-# for the kNN-imputed data:
-rfeCtrl <- rfeControl(functions = rfFuncs, method = "cv", verbose = FALSE)  # the first arguments allows to specify which method we want to use
-system.time(rfProfile_knn <- rfe(x = imputed_knn[, -1], y = imputed_knn$d_cyanobac, sizes = subsets, rfeControl = rfeCtrl))  # this code always takes a bit of time, which is totally normal
-# for the bag-imputed data:
-system.time(rfProfile_bag <- rfe(x = imputed_bag[, -1], y = imputed_bag$d_cyanobac, sizes = subsets, rfeControl = rfeCtrl))  # this code always takes a bit of time, which is totally normal
-# for the median-imputed data:
-system.time(rfProfile_median <- rfe(x = imputed_median[, -1], y = imputed_median$d_cyanobac, sizes = subsets, rfeControl = rfeCtrl))  # this code always takes a bit of time, which is totally normal
-
-# Displaying the results:
-rfProfile_knn 
-rfProfile_bag 
-rfProfile_median 
+training <- predict(train_pre_imp, newdata = training)  # actually imputing the missing data
+test <- predict(test_pre_imp, newdata = test)
 
 tg <- data.frame(mtry = c(1:9))  # set the tuneGrid argument to be the same for all models 
 fitControl <- trainControl(method = "cv", number = 10)  # set the cross-validation control to be the same for all models
 
 # Running the actual Random Forest models
-set.seed(123)
-system.time(rf_knn <- train(d_cyanobac ~., data = imputed_knn, method = "rf", importance = TRUE, tuneGrid = tg, trControl = fitControl))
-system.time(rf_bag <- train(d_cyanobac ~., data = imputed_bag, method = "rf", importance = TRUE, tuneGrid = tg, trControl = fitControl))
-system.time(rf_median <- train(d_cyanobac ~., data = imputed_median, method = "rf", importance = TRUE, tuneGrid = tg, trControl = fitControl))
+set.seed(123)  # Setting a seed, so that the model is reproducible 
+system.time(rf_chrooco <- train(r_chrooco ~., data = training, method = "rf", importance = TRUE, tuneGrid = tg, trControl = fitControl, na.action = na.omit))  # Running the actual Random Forest model
 
-# Displaying their results
-rf_knn
-rf_bag
-rf_median
+# Displaying the result
+rf_chrooco
 
-# The random forest with kNN imputation tends to have the best results
-# Unexpected again: mtry = 1
+# Analyzing variable importance for the model (post-modelling)
+varImp_chrooco <- varImp(rf_chrooco)
+chrooco_impPlot <- plot(varImp_chrooco, main = "Variable importance (Random Forest, no imputation")
+print(chrooco_impPlot)
 
-# Analyzing variable importance for each model (post-modelling):
-varImp_knn <- varImp(rf_knn)
-knnPlot <- plot(varImp_knn, main = "Variable importance (Random Forest, kNN imputation)")
+# # Testing the model:
+# test_chrooco <- predict(rf_chrooco, newdata = test)
+# 
+# # Then evaluate how precise this model is, based on the test prediction
+# defaultSummary(data = data.frame(obs = test$r_chrooco, pred = test_chrooco))
 
-varImp_bag <- varImp(rf_bag)
-bagPlot <- plot(varImp_bag, main = "Variable importance (Random Forest, bagging imputation)")
 
-varImp_median <- varImp(rf_median)
-medianPlot <- plot(varImp_median, main = "Variable importance (Random Forest, median imputation)")
 
-print(impPlots <- ggarrange(knnPlot, bagPlot,medianPlot,
-                            ncol = 1, nrow = 3, align = "hv"))
+# 10.1.3) Random forest on the Nostocales ratio
+# Partitioning the data
+set.seed(123) # doesn't need to be 123, but having a value here makes the test reproducible
+trainIndex <- createDataPartition(nosto_frame$r_nosto, p = 0.7, list = FALSE)  # Choosing which indices of the data set will be for training, and which ones for testing. 70% are for training, 30% for testing
+training <- nosto_frame[trainIndex, ]  # creating the training data set
+test <- nosto_frame[-trainIndex, ]  # creating the testing data set
 
-# Testing the model:
-# First, using the model on the testing data to create a test prediction
-test_knn <- predict(rf_knn, newdata = test_imputed_knn)
-test_bag <- predict(rf_bag, newdata = test_imputed_bag)
-test_median <- predict(rf_median, newdata = test_imputed_median)
+# Finding out if there's correlated variables in the data set 
+frame_cor <- cor(nosto_frame)
+findCorrelation(frame_cor, verbose = TRUE)
+# We get the value "0" out of it, which means there are no highly correlated variables 
 
-# Then evaluate how precise this test prediction was
-defaultSummary(data = data.frame(obs = test$r_cyanobac, pred = test_knn))
-defaultSummary(data = data.frame(obs = test$r_cyanobac, pred = test_bag)) # Generally, the model with the bagging imputation has the best results (lowest RMSE)
-defaultSummary(data = data.frame(obs = test$r_cyanobac, pred = test_median))  
+# In the GRE data set, there is only 1 NA in the NO3_N predictor. Bag-imputing it
+train_pre_imp <- preProcess(training, method = "bagImpute", verbose = TRUE)  # creating the models to impute the missing data
+test_pre_imp <- preProcess(test, method = "bagImpute", verbose = TRUE)
+
+training <- predict(train_pre_imp, newdata = training)  # actually imputing the missing data
+test <- predict(test_pre_imp, newdata = test)
+
+tg <- data.frame(mtry = c(1:9))  # set the tuneGrid argument to be the same for all models 
+fitControl <- trainControl(method = "cv", number = 10)  # set the cross-validation control to be the same for all models
+
+# Running the actual Random Forest models
+set.seed(123)  # Setting a seed, so that the model is reproducible 
+system.time(rf_nosto <- train(r_nosto ~., data = training, method = "rf", importance = TRUE, tuneGrid = tg, trControl = fitControl, na.action = na.omit))  # Running the actual Random Forest model
+
+# Displaying the result
+rf_nosto
+
+# Analyzing variable importance for the model (post-modelling)
+varImp_nosto <- varImp(rf_nosto)
+nosto_impPlot <- plot(varImp_nosto, main = "Variable importance (Random Forest, no imputation")
+print(nosto_impPlot)
+
+# # Testing the model:
+# test_nosto <- predict(rf_nosto, newdata = test)
+# 
+# # Then evaluate how precise this model is, based on the test prediction
+# defaultSummary(data = data.frame(obs = test$r_nosto, pred = test_nosto))
+
+
+
+# 10.1.4) Random forest on the Oscillatoriales ratio
+# Partitioning the data
+set.seed(123) # doesn't need to be 123, but having a value here makes the test reproducible
+trainIndex <- createDataPartition(oscillato_frame$r_oscillato, p = 0.7, list = FALSE)  # Choosing which indices of the data set will be for training, and which ones for testing. 70% are for training, 30% for testing
+training <- oscillato_frame[trainIndex, ]  # creating the training data set
+test <- oscillato_frame[-trainIndex, ]  # creating the testing data set
+
+# Finding out if there's correlated variables in the data set 
+frame_cor <- cor(oscillato_frame)
+findCorrelation(frame_cor, verbose = TRUE)
+# We get the value "0" out of it, which means there are no highly correlated variables 
+
+# In the GRE data set, there is only 1 NA in the NO3_N predictor. Bag-imputing it
+train_pre_imp <- preProcess(training, method = "bagImpute", verbose = TRUE)  # creating the models to impute the missing data
+test_pre_imp <- preProcess(test, method = "bagImpute", verbose = TRUE)
+
+training <- predict(train_pre_imp, newdata = training)  # actually imputing the missing data
+test <- predict(test_pre_imp, newdata = test)
+
+tg <- data.frame(mtry = c(1:9))  # set the tuneGrid argument to be the same for all models 
+fitControl <- trainControl(method = "cv", number = 10)  # set the cross-validation control to be the same for all models
+
+# Running the actual Random Forest models
+set.seed(123)  # Setting a seed, so that the model is reproducible 
+system.time(rf_oscillato <- train(r_oscillato ~., data = training, method = "rf", importance = TRUE, tuneGrid = tg, trControl = fitControl, na.action = na.omit))  # Running the actual Random Forest model
+
+# Displaying the result
+rf_oscillato
+
+# Analyzing variable importance for the model (post-modelling)
+varImp_oscillato <- varImp(rf_oscillato)
+oscillato_impPlot <- plot(varImp_oscillato, main = "Variable importance (Random Forest, no imputation")
+print(oscillato_impPlot)
+
+# # Testing the model:
+# test_nosto <- predict(rf_nosto, newdata = test)
+# 
+# # Then evaluate how precise this model is, based on the test prediction
+# defaultSummary(data = data.frame(obs = test$r_nosto, pred = test_nosto))
+
+
+# 10.2) Results of the modelling, and 3D plots ####
+# The results of the random forest models:
+rf_r_cyano
+rf_chrooco
+rf_nosto
+rf_oscillatio
+
+# Creating 3D plots to illustrate the models
+
+# Creating the plots using the plotmo library
+library(plotmo)
+
+# # These here don't work, I need to run the model just before creating the plots. I'll do that later if need be, the blue-white-red ones seems to be ok too
+# cyano_3d <- plotmo(rf_r_cyano, degree1 = 0, degree2 = c("temperature", "PO4_P"), type2 = "image", image.col = rev(rainbow(99, start = 0.05, end = 0.65, alpha = 0.8)), pmethod = "apartdep", main = "tot cyano ratio")
+# 
+# chrooco_3d <- plotmo(rf_chrooco, degree1 = 0, degree2 = c("temperature", "PO4_P"), type2 = "image", image.col = rev(rainbow(99, start = 0.05, end = 0.65, alpha = 0.8)), pmethod = "apartdep", main = "chrooco ratio")
+# 
+# nosto_3d <- plotmo(rf_nosto, degree1 = 0, degree2 = c("tot_zoo", "temperature"), type2 = "image", image.col = rev(rainbow(99, start = 0.05, end = 0.65, alpha = 0.8)), pmethod = "apartdep", main = "nosto ratio")
+# 
+# oscillato_3d <- plotmo(rf_oscillato, degree1 = 0, degree2 = c("temperature", "PO4_P"), type2 = "image", image.col = rev(rainbow(99, start = 0.05, end = 0.65, alpha = 0.8)), pmethod = "apartdep", main = "oscillato ratio")
+# 
+# ggarrange(cyano_3d, chrooco_3d,
+#           nosto_3d, oscillato_3d,
+#           nrow = 2, ncol= 2)
+
+
+
+# Creating the plots using the pdp library
+library(pdp)
+bwr <- colorRampPalette(c("blue", "white", "red"))  # This colour palette will be used to display the predictions of the model in 3D
+
+# The following 4 plots show the relationship between the 2 best predictors of each model (x and y axes) and the response variable
+cyano_3d <- plotPartial(partial(rf_r_cyano, pred.var = c("PO4_P", "temperature")), contour = TRUE, col.regions = bwr, main = "tot cyano ratio")  #Creating the 3D plot for the total cyanobacteria ratio model
+
+chrooco_3d <- plotPartial(partial(rf_chrooco, pred.var = c("cyclopoida", "tot_zoo")), contour = TRUE, col.regions = bwr, main = "Chrooco ratio")  # creating the plot for the chroococales ratio model 
+
+system.time(nosto_3d <- plotPartial(partial(rf_nosto, pred.var = c("temperature", "NO3_N")), contour = TRUE, col.regions = bwr, main = "Nosto ratio"))  # creating the plot for the nostocales ratio model
+
+oscillato_3d <- plotPartial(partial(rf_oscillato, pred.var = c("daphniidae", "cyclopoida")), contour = TRUE, col.regions = bwr, main = "Oscillato ratio")  #creating the plot for the Oscillatoriales ratio model
+
+all_3d <- ggarrange(cyano_3d, chrooco_3d,
+                    nosto_3d, oscillato_3d,
+                    nrow = 2, ncol= 2)  # arranging all plots in a single figure
+all_3d
+
+# now with the temperature and PO4 only
+cyano_3d_tp <- plotPartial(partial(rf_r_cyano, pred.var = c("PO4_P", "temperature")), contour = TRUE, col.regions = bwr, main = "tot cyano ratio")
+
+chrooco_3d_tp <- plotPartial(partial(rf_chrooco, pred.var = c("PO4_P", "temperature")), contour = TRUE, col.regions = bwr, main = "Chrooco ratio")
+
+system.time(nosto_3d_tp <- plotPartial(partial(rf_nosto, pred.var = c("PO4_P", "temperature")), contour = TRUE, col.regions = bwr, main = "Nosto ratio"))
+
+oscillato_3d_tp <- plotPartial(partial(rf_oscillato, pred.var = c("PO4_P", "temperature")), contour = TRUE, col.regions = bwr, main = "Oscillato ratio")
+
+all_3d_tp <- ggarrange(cyano_3d_tp, chrooco_3d_tp,
+                    nosto_3d_tp, oscillato_3d_tp,
+                    nrow = 2, ncol= 2)
+all_3d_tp
+
+
+
+# wanted to check which taxa are in the microzoo, and if there really are some microzoo in the phyto_raw
+# Use phyto_raw, and meta_db_zoo
+
+test <- inner_join(phyto_raw, (meta_db_zoo %>% select(id_CH, order, genus, species, volume_um.3)), by="id_CH")  # Adding the needed info columns to the phyto data table
+nrow(phyto_raw)
+nrow(phyto_selec)
+nrow(test)
+
+# haha! Just found out I didn't integrate the smallzoo from the phyto_smallzoo files --> redo that
+# This is a pain --> I'll have to integrate some data from the phyto data to the zoo data frame, haha I'm crying inside :)

@@ -5,6 +5,7 @@ load_libraries <- function(){
   library(GGally)
   library(caret)
   library(doParallel)
+  library(plotly)
   }
 
 
@@ -23,7 +24,7 @@ databases <- function(){
   meta_db_phyto <- meta_db_phyto %>% mutate(volume_um.3 = replace(volume_um.3, id_CH == 135, 2.5))  # For unknown reasons, this data point is encoded wrongly in the meta_db_phyto file
   meta_db_phyto <- meta_db_phyto %>% mutate(volume_um.3 = replace(volume_um.3, id_CH == 3910, NA))  # This must be due to a misclick, but the value was Na instead of NA
   meta_db_phyto <- meta_db_phyto %>% mutate_at(c("volume_um.3", "volume_um.3.1"), as.numeric) # changing the data type of the columns to "numeric"
-  
+   
   meta_db_phyto <<- meta_db_phyto  # making the database global
   cat(sum(is.na(meta_db_phyto$id_CH)), "entries don't have an id_CH in meta_db_phyto \n")  # In this database, there are no taxa without an id_CH
   cat(nrow(no_volP <<- inner_join(subset(meta_db_phyto, is.na(volume_um.3)), subset(meta_db_phyto, is.na(mdn_nu.biovol)), by="id_CH")), "entries don't have a volume_um.3 nor a mdn_nu.biovol in the meta_db_phyto \n\n") # this calculates how many taxa don't have a volume_um.3 nor a mdn_nu.biovol. It's 42 entries in the meta database for Phyto
@@ -54,9 +55,12 @@ ready_phyto_selec <- function(){
   
   phyto_selec <- inner_join(phyto_raw, (meta_db_phyto %>% select(id_CH, order, genus, species, volume_um.3, kremer_key, mdn_nu.biovol, volume_um.3.1, species_buergi)), by="id_CH")  # Adding the needed info columns to the phyto data table
   
+  smallzoo <- inner_join(phyto_raw, (meta_db_zoo %>% select(id_CH, phylum, order, family, genus, species, stage, volume_um.3, guild)), by = "id_CH")  # creating a separate data frame containing the small zooplankton 
+  
   # Making the data frames global (i.e. accessible outside the function)
   phyto_raw <<- phyto_raw
   phyto_selec <<- phyto_selec
+  smallzoo <<- smallzoo
   cat("\n-----\n")
 }
 
@@ -230,9 +234,6 @@ ready_phyto_final <- function(){
   # Calculating the total cyanobacteria biovolume
   phyto_final <- phyto_final %>% mutate(tot_cyanobac = chrooco + nosto + oscillato)
   
-  # Putting the NA back into the data frame
-  phyto_final <- phyto_final %>% mutate(across(c(chrooco, nosto, oscillato), ~na_if(., 0)))
-  
   # Now that we have them in columns, we can calculate the ratio between the orders and the total phytoplankton biovolume:
   phyto_final <-  phyto_final %>% mutate(r_chrooco = chrooco / tot_phyto)
   phyto_final <-  phyto_final %>% mutate(r_nosto = nosto / tot_phyto)
@@ -255,8 +256,8 @@ ready_zoo_raw <- function(){
   #' 
   #' This function makes sure the data type of the columns is what it needs to be
   #' 
-  zoo_raw$depth <- factor(zoo_raw$depth)  # only one depth
-  zoo_raw$unit <- factor(zoo_raw$unit)  # only one unit
+  zoo_raw$depth <- factor(zoo_raw$depth)  # only one depth per lake
+  zoo_raw$unit <- factor(zoo_raw$unit)  # only one unit per lake
   zoo_raw$date <- as.Date(zoo_raw$date, "%Y-%m-%d") # transforming the date to a Date format
   
   # making the data frame global
@@ -272,6 +273,8 @@ ready_zoo_agg <- function(){
   #' 
   cat("\n-----\n")
   zoo_selec <- inner_join(zoo_raw, (meta_db_zoo %>% select(id_CH, phylum, order, family, genus, species, stage, volume_um.3, guild)), by="id_CH")  # Adding the needed info columns to the data table
+  
+  zoo_selec <- bind_rows(zoo_selec, smallzoo)  # adding the small zooplankton to the data frame (they come from the "phyto_smallzoo" file)
   
   # Tidying up the data to make it ready for use
   zoo_agg <- zoo_selec[complete.cases(zoo_selec$abundance),] # removes data points without an abundance
@@ -351,10 +354,8 @@ ready_zoo_final <- function(){
   
   zoo_final <- aggregate(list(zoo_final$daphniidae, zoo_final$cyclopoida, zoo_final$calanoida), by = list(zoo_final$date, zoo_final$tot_zoo, zoo_final$microzoo), sum, na.rm = TRUE)  # After this step, all NA's are replaced by 0's. I will change back to NA again later
   names(zoo_final) <- c("date", "tot_zoo", "microzoo", "daphniidae", "cyclopoida", "calanoida")
-  
-  # Removing the 0's and replacing them with NA's
- zoo_final <- zoo_final %>% mutate(across(c(daphniidae, cyclopoida, calanoida), ~na_if(., 0)))
  
+  
   # making the data frame global
   zoo_final <<- zoo_final
   cat("\n-----\n")
@@ -375,7 +376,7 @@ ready_temp_chem <- function(){
 
 
 
-ready_end_frame <- function(){
+ready_end_frame <- function(lake){
   #' 
   #' This function puts the prepared phytoplankton data, the zooplankton data with the chemistry and temperature data into a single data frame
   #' 
@@ -390,6 +391,12 @@ ready_end_frame <- function(){
   
   # Making the data frame global
   end_frame <<- end_frame
+  
+  # Adding the lake to the data, and Saving the end_frame data as a .csv for future uses
+  end_frame$lake <- lake
+  
+  setwd("~/GitHub/Bachelor_cyanobac/workplace2/data_new")
+  write.csv(end_frame, paste("processed_", lake, ".csv", sep = ""))
 }
 
 

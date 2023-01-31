@@ -30,4 +30,4 @@ Problems:
 
 High value in GRE for temperature on 2003-06-16 (maybe remove?) 17.47°C over the water column --> no measures after 12.5 m. Exclude!
 High value in GRE for temperature on 2009-08-10 (maybe remove?) 16.80°C over the water column --> no measures after 12.5 m. Exclude!
-
+High value in BAL for NO3 on 2018-06-14 (remove) 1280 mg/L --> the value is higher than the solubility of nitrate in water. Exclude!
